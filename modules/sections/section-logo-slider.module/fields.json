@@ -1,0 +1,191 @@
+[ {
+  "id" : "c6a410f6-26ab-717e-39fe-6a09abb73dc6",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3>We are used by top companies and organisations</h3>"
+}, {
+  "id" : "e22d1cee-de16-7110-7ec4-0fc0184a8670",
+  "name" : "logos",
+  "label" : "Logos",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 5,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 5
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : [ {
+    "size_type" : "auto",
+    "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Logos/logo-ipsum.svg",
+    "alt" : "logo-ipsum",
+    "loading" : "lazy",
+    "width" : 112,
+    "height" : 26,
+    "max_width" : 112,
+    "max_height" : 26
+  }, {
+    "size_type" : "auto",
+    "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Logos/logo-ipsum.svg",
+    "alt" : "logo-ipsum",
+    "loading" : "lazy",
+    "width" : 112,
+    "height" : 26,
+    "max_width" : 112,
+    "max_height" : 26
+  }, {
+    "size_type" : "auto",
+    "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Logos/logo-ipsum.svg",
+    "alt" : "logo-ipsum",
+    "loading" : "lazy",
+    "width" : 112,
+    "height" : 26,
+    "max_width" : 112,
+    "max_height" : 26
+  }, {
+    "size_type" : "auto",
+    "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Logos/logo-ipsum.svg",
+    "alt" : "logo-ipsum",
+    "loading" : "lazy",
+    "width" : 112,
+    "height" : 26,
+    "max_width" : 112,
+    "max_height" : 26
+  }, {
+    "size_type" : "auto",
+    "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Logos/logo-ipsum.svg",
+    "alt" : "logo-ipsum",
+    "loading" : "lazy",
+    "width" : 112,
+    "height" : 26,
+    "max_width" : 112,
+    "max_height" : 26
+  } ]
+}, {
+  "id" : "935df7c2-2a62-c57e-26a2-c0e3388924c1",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a63c9da9-337b-a7d0-2e0d-855107c46164",
+    "name" : "enable_greyscale",
+    "label" : "Enable greyscale",
+    "help_text" : "This will enable a greyscale filter on all logos",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "2dd073af-e041-44ee-f42b-18fdc6253d76",
+    "name" : "remove_fade",
+    "label" : "Remove fade",
+    "help_text" : "This will remove the fade in the sides making the logos go to egde of screen",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "9b46b4b6-9590-4db4-788d-1955ddac9cce",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "help_text" : "This changes the fade color so it can be matched to section background color",
+    "required" : false,
+    "locked" : false,
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#EEEEEE",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "enable_greyscale" : false,
+    "remove_fade" : false,
+    "background_color" : {
+      "color" : "#EEEEEE",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "13ee350a-ee67-a447-43be-43eedd6930fe",
+  "name" : "disable_logo_max_height",
+  "label" : "Disable logo max height",
+  "inline_help_text" : "Will make logo img scale to slide container width and scale according to natural aspect ratio",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "da143f67-c12f-d6c0-6056-ee588728c819",
+  "name" : "slider_settings",
+  "label" : "Slider Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "no_delay",
+    "name" : "no_delay",
+    "label" : "No delay",
+    "inline_help_text" : "make the slides slide with out any stops in animation",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "f9dca6f7-357d-8d2e-cc00-c0c56291a16c",
+    "name" : "autoplay",
+    "label" : "Autoplay?",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "316946a9-44e0-6186-3808-c65b9598f410",
+    "name" : "speed",
+    "label" : "Speed",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 0,
+    "max" : 5000,
+    "step" : 500,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 1500
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "no_delay" : true,
+    "autoplay" : true,
+    "speed" : 1500
+  }
+} ]

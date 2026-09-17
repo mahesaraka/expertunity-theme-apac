@@ -1,0 +1,61 @@
+.pagination{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pagination__page, 
+.pagination__arrow{
+    max-width: 40px;
+    max-height: 40px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    color: inherit;
+    background-color: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+
+}
+
+.pagination__page:hover, 
+.pagination__page.pagination__page--active{
+    background-color: var(--tiber-green);
+    color: white;
+}
+
+.pagination__arrow:hover{
+    background-color: var(--tiber-green);
+}
+
+.pagination__arrow svg path{
+    stroke: var(--tiber-green);
+}
+
+.pagination__arrow:hover svg path{
+    stroke: var(--white);
+}
+
+
+.pagination__arrow svg{
+    pointer-events: none;
+}
+
+.pagination__arrow.pagination__arrow--prev svg{
+    transform: rotate(180deg);
+}
+
+.pagination__arrow.pagination__arrow--inactive{
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+.pagination:has(.pagination__arrow.pagination__arrow--prev.pagination__arrow--inactive):has(.pagination__arrow.pagination__arrow--next.pagination__arrow--inactive) .pagination__arrow.pagination__arrow--inactive{
+    display: none;
+}

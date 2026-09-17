@@ -1,0 +1,87 @@
+{
+    "name": "Bauziet",
+    "default": "Regular",
+    "fallback": "Helvetica, sans-serif",
+    "variants": [
+      {
+        "name": "Light",
+        "files": [
+          {
+            "file": "./BauzietLight/font.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./BauzietLight/font.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 300
+        }
+      },
+      {
+        "name": "Regular",
+        "files": [
+          {
+            "file": "./BauzietRegular/font.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./BauzietRegular/font.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 400
+        }
+      },
+      {
+        "name": "Medium",
+        "files": [
+          {
+            "file": "./BauzietMedium/font.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./BauzietMedium/font.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 500
+        }
+      },
+      {
+        "name": "Semibold",
+        "files": [
+          {
+            "file": "./BauzietSemibold/font.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./BauzietSemibold/font.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 600
+        }
+      },
+      {
+        "name": "Bold",
+        "files": [
+          {
+            "file": "./BauzietBold/font.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./BauzietBold/font.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 700
+        }
+      }
+    ]
+  }

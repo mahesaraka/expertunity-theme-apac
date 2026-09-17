@@ -1,0 +1,6 @@
+/* Rich text */
+
+.widget-type-rich_text img {
+  height: auto;
+  max-width: 100%;
+}

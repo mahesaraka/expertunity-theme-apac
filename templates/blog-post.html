@@ -1,0 +1,26 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Expertunity - Blog post
+-->
+{% set template_css = '../../css/templates/_blog-post.css' %}
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+    {% module "post_hero" path="../modules/blog/blog-post-hero.module", label="Blog post hero" %}
+
+    <div class="blog-wrapper">
+        {% module "post_author" path="../modules/blog/blog-author.module", label="Blog Author" %}
+
+        <section class="blog-post-content">
+            <div class="wrapper">
+                {{ content.post_body }}
+            </div>
+        </section>
+    </div>
+    <div class="blog-modules-wrapper">
+        {% module "related_posts" path="../modules/blog/blog-related-posts.module", label="Related posts" %}
+
+        {% module "registration_global" path="../modules/sections/section-registration-banner-global.module", label="Registration Banner Global" %}
+    </div>
+{% endblock body %}

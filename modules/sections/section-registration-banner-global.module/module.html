@@ -1,0 +1,100 @@
+{# ============================ MODULE SETTINGS ============================ #}
+
+{# ========= BUTTON SETTINGS ========= #}
+
+{% set button_style = module.cta_settings.button_settings.button_type %}
+{% set button_colour = module.cta_settings.button_settings.button_colour %}
+    
+{# ======= END BUTTON SETTINGS ====== #}
+
+{# ========= BACKGROUND STYLES ========= #}
+{% set bg_styles = [] %}
+
+{% if module.style.background_color.color %}
+  {% set bg_opacity = (module.style.background_color.opacity|default(100)) / 100 %}
+  {% do bg_styles.append("background-color: rgba(" ~ module.style.background_color.color|convert_rgb ~ ", " ~ bg_opacity ~ ")") %}
+{% endif %}
+
+{% if module.style.background_image.src %}
+  {% if module.style.background_overlay.color and module.style.background_overlay.opacity > 0 %}
+    {% set overlay_opacity = (module.style.background_overlay.opacity|default(50)) / 100 %}
+    {% set overlay_rgba = "rgba(" ~ module.style.background_overlay.color|convert_rgb ~ ", " ~ overlay_opacity ~ ")" %}
+    {% do bg_styles.append("background-image: linear-gradient(" ~ overlay_rgba ~ ", " ~ overlay_rgba ~ "), url('" ~ module.style.background_image.src ~ "')") %}
+  {% else %}
+    {% do bg_styles.append("background-image: url('" ~ module.style.background_image.src ~ "')") %}
+  {% endif %}
+  {% do bg_styles.append("background-size: " ~ (module.style.background_size|default('cover'))) %}
+  {% do bg_styles.append("background-position: " ~ (module.style.background_position|default('center center'))) %}
+  {% do bg_styles.append("background-repeat: " ~ (module.style.background_repeat|default('no-repeat'))) %}
+{% endif %}
+{# ======= END BACKGROUND STYLES ======= #}
+    
+{# ============================== MODULE HTML ============================== #}
+    
+    <section class="registration-banner" style="{{ bg_styles|join('; ') }};" id="registration-banner">
+        <div class="registration-banner__content">
+            {{ module.content }}
+            <div class="registration-banner__content-ctas">
+                {% if module.cta_settings.cta_type == 'cta' %}
+                    {% cta guid="{{ module.cta_settings.cta_field }}" %}
+                {% else %}
+                    <a  class="{{button_style}} {{button_colour}} {% if module.cta_settings.button_settings.trigger_modal %}trigger-modal{% endif %} {{ 'cta--pulse' if module.cta_settings.button_settings.pulse_effect }}" href="{% if module.cta_settings.button_settings.trigger_modal %}javascript:void(0);{% else %}{{ module.cta_settings.button_settings.button_url.href }}{% endif %}">{{ module.cta_settings.button_settings.button_text }}</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="registration-banner__icons">
+            {% for list_item in module.list_items %}
+                <div class="registration-banner__icon-list-item">
+                    <img src="{{ list_item.icon.src }}" alt="{{ list_item.icon.alt }}">
+                    <p class="big-text" style="color: {{ list_item.text_color.color }}">{{ list_item.title }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="registration-banner__modal">
+            <div class="registration-banner__modal-content">
+                {{ module.modal.content }}
+                <div class="registration-banner__modal-content-form">
+                    <script src="https://js-eu1.hsforms.net/forms/embed/developer/4993418.js" defer></script>
+                    <div class="hs-form-html" data-region="eu1" data-form-id="{{ module.modal.form.form_id }}" data-portal-id="4993418"></div>
+                </div>
+            </div>
+    </div>
+    
+{# ============================== MODULE CSS ============================== #}
+
+{% if module.cta_settings.button_settings.button_colour == "manual-cta" or module.cta_settings.button_settings.button_type == "custom-cta" %}
+{% require_css %}
+  <style>
+    {% scope_css %}
+      .manual-cta,
+      .custom-cta {
+        {% if module.cta_settings.button_settings.background_color.color %}
+          background-color: {{ module.cta_settings.button_settings.background_color.color }} !important;
+        {% endif %}
+        {% if module.cta_settings.button_settings.border_color.color %}
+          border-color: {{ module.cta_settings.button_settings.border_color.color }} !important;
+        {% endif %}
+        {% if module.cta_settings.button_settings.button_text_color.color %}
+          color: {{ module.cta_settings.button_settings.button_text_color.color }} !important;
+        {% endif %}
+      }
+
+      .manual-cta:hover,
+      .custom-cta:hover {
+        {% if module.cta_settings.button_settings.background_color_hover.color %}
+          background-color: {{ module.cta_settings.button_settings.background_color_hover.color }} !important;
+        {% endif %}
+        {% if module.cta_settings.button_settings.border_color_hover.color %}
+          border-color: {{ module.cta_settings.button_settings.border_color_hover.color }} !important;
+        {% endif %}
+        {% if module.cta_settings.button_settings.button_text_color_hover.color %}
+          color: {{ module.cta_settings.button_settings.button_text_color_hover.color }} !important;
+        {% endif %}
+      }
+    {% end_scope_css%}
+  </style>
+{% end_require_css %}
+{% endif %}
+    

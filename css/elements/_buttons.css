@@ -1,0 +1,200 @@
+
+.primary-cta, 
+.secondary-cta,
+.custom-cta {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 0.9!important;
+  padding: 16px 32px;
+  padding-top: 19px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  max-width: max-content;
+}
+
+.primary-cta:hover, 
+.secondary-cta:hover,
+.custom-cta:hover {
+  font-weight: 600!important;
+}
+
+.primary-cta.inactive-cta, 
+.secondary-cta.inactive-cta,
+.custom-cta.inactive-cta {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Colourways */
+
+/* Colourways -> Purple */
+
+.primary-cta.purple-cta {
+  background-color: #600087;
+  border-color: #600087;
+  color: white;
+}
+
+.primary-cta:hover.purple-cta{
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+.secondary-cta.purple-cta {
+  background-color: transparent;
+  border-color: #600087;
+  color: #600087;
+}
+
+.secondary-cta:hover.purple-cta{
+  background-color: #600087;
+  border-color: #600087;
+  color: #ffffff;
+}
+
+/* Colourways -> White */
+
+.primary-cta.white-cta {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #600087;
+}
+
+.primary-cta:hover.white-cta {
+  background-color: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.secondary-cta.white-cta {
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.secondary-cta:hover.white-cta {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #600087;
+}
+
+/* Colourways -> Orange */
+
+.primary-cta.orange-cta{
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+.primary-cta:hover.orange-cta{
+  background-color: transparent;
+  color: var(--orange);
+}
+
+.secondary-cta.orange-cta{
+  background-color: transparent;
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.secondary-cta:hover.orange-cta{
+  background-color: var(--orange);
+  color: white;
+}
+
+/* Colourways -> Accent 1 */
+
+.primary-cta.accent-one-cta {
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
+  color: var(--purple);
+}
+
+.primary-cta:hover.accent-one-cta{
+  background-color: transparent;
+  color: var(--accent-1);
+}
+
+.secondary-cta.accent-one-cta{
+  background-color: transparent;
+  border-color: var(--accent-1);
+  color: var(--accent-1);
+}
+
+.secondary-cta:hover.accent-one-cta{
+  background-color: var(--accent-1);
+  color: white;
+}
+
+/* Colourways -> Accent 2 */
+
+.primary-cta.accent-two-cta {
+  background-color: var(--accent-2);
+  border-color: var(--accent-2);
+  color: white;
+}
+
+.primary-cta:hover.accent-two-cta{
+  background-color: transparent;
+  color: var(--accent-2);
+}
+
+.secondary-cta.accent-two-cta{
+  background-color: transparent;
+  border-color: var(--accent-2);
+  color: var(--accent-2);
+}
+
+.secondary-cta:hover.accent-two-cta{
+  background-color: var(--accent-2);
+  color: white;
+}
+
+
+@media screen and (max-width: 767px){
+  .cta_button.primary-cta, 
+  .cta_button.secondary-cta,
+  .cta_button.custom-cta {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100%;
+  }
+
+  .primary-cta, 
+  .secondary-cta,
+  .custom-cta {
+    width: 100%;
+    max-width: unset;
+  }
+}
+
+/* animations */
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  33% {
+    transform: scale(1.2); /* Scale up during first 1/3 of the 1s pulse */
+  }
+  66% {
+    transform: scale(1);   /* Return to normal during the 1s pulse */
+  }
+  100% {
+    transform: scale(1);   /* Stay at normal size during break */
+  }
+}
+
+@media screen and (min-width: 560px) { 
+  .cta--pulse {
+    animation: pulse 3000ms cubic-bezier(.5,-0.25,.75,1) infinite;
+  }
+}

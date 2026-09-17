@@ -1,0 +1,136 @@
+/* System template styles */
+
+.system-header-wrapper {
+  padding: 200px 0 150px;
+  background-color: var(--blue);
+}
+
+.system-header-wrapper h1 {
+  color: var(--white);
+  text-align: center;
+}
+
+.system-header-wrapper form {
+  background-color: transparent;
+  padding: 0;
+}
+
+/* Error pages */
+
+.error-page-wrapper {
+  background: var(--secondary-colour);
+  background-image: url(https://9163974.fs1.hubspotusercontent-na1.net/hubfs/9163974/hero-banner-bg.svg);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+.error-page {
+  min-height: 100vh;
+  padding: 9.8rem 1em;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.error-page__header-content {
+  max-width: 700px;
+}
+
+.error-page__header-content h1 {
+  font-size: 100px;
+}
+
+.error-page__column-links {
+  padding: 100px 20px;
+}
+
+.error-page__cta-banner-wrapper {
+  background-color: var(--blue);
+}
+
+.error-page__cta-banner-wrapper .content-wrapper {
+  padding: 0 20px;
+}
+
+.error-page__cta-banner {
+  padding: 100px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+@media (max-width: 767px) {
+  .error-page__cta-banner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* System pages */
+
+.systems-page {
+  max-width: 700px;
+  padding: 2.8rem 1.4rem;
+  margin: 0 auto;
+}
+
+.systems-page--search-results {
+  max-width: 100%;
+}
+
+.systems-page .success {
+  display: inline-block;
+  width: 100%;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid #4f7d24;
+  margin: 1.4rem 0;
+  background-color: #cde3cc;
+  color: #4f7d24;
+}
+
+/* Search pages */
+
+.hs-search-results__title {
+  margin-bottom: 0.35rem;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.hs-search-results__description {
+  padding-top: 0.7rem;
+}
+
+/* Backup unsubscribe */
+
+.backup-unsubscribe #email-prefs-form div {
+  padding-bottom: 0 !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.backup-unsubscribe input[type="email"] {
+  margin-bottom: 1.4rem;
+}
+
+/* Subscription preferences */
+
+form#email-prefs-form .header {
+  background-color: transparent;
+}
+
+form#email-prefs-form .item.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+form#email-prefs-form .item.disabled input:disabled {
+  cursor: not-allowed;
+}
+
+/* Input error messages */
+
+.form-input-validation-message ul.hs-error-msgs {
+  padding-left: 0;
+  margin: 0;
+}
+
+.form-input-validation-message ul.hs-error-msgs li {
+  margin: 0;
+}

@@ -1,0 +1,113 @@
+.custom-language.header__language-switcher.header--element {
+    width: 25px;
+    height: 25px;
+}
+
+.custom-language .globe_class {
+    background-image: url(https://www.byggefakta.dk/hubfs/Expertunity%20Theme%20Assets/Icons/Language%20icon.svg);
+    width: 25px;
+    height: 25px;
+}
+
+.custom-language .lang_list_class {
+    background-color: #F5F5F5;
+    border-radius: 30px;
+    position: absolute;
+    top: calc(100% + 30px);
+    left: -150px;
+    transform: translateX(0);
+    width: max-content;
+    background-color: #f5f5f5;
+    list-style: none;
+    margin: 0;
+    padding: 28px 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.15s ease-in-out;
+    z-index: 99;
+    border-radius: var(--radius);
+    box-shadow: 0px 6px 40px rgba(0, 0, 0, 0.20);
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.custom-language .globe_class:hover .lang_list_class {
+    opacity: 1;
+    visibility: visible;
+    list-style-type: none;
+    overflow: clip;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.custom-language .lang_list_class::before {
+    content: none;
+}
+
+.custom-language .lang_list_class::after {
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-color: transparent;
+    width: 100%;
+    height: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.custom-language .lang_list_class li {
+    display: flex;
+    align-items: center;
+    border: none !important;
+    background-color: transparent;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 25px;
+    min-width: 150px;
+}
+
+.custom-language .lang_list_class li::before {
+    content: '';
+    display: block;
+    min-width: 25px;
+    min-height: 25px;
+    position: absolute;
+    left: 0;
+    transform: translateX(-200%);
+    background-image: url("data:image/svg+xml, %3Csvg width='32' height='33' viewBox='0 0 32 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 32.8C24.8366 32.8 32 25.6366 32 16.8C32 7.96349 24.8366 0.800049 16 0.800049C7.16344 0.800049 0 7.96349 0 16.8C0 25.6366 7.16344 32.8 16 32.8Z' fill='white'/%3E%3Cpath d='M22.6999 17.3002L17.3999 22.6002C17.0999 22.9002 16.4999 22.9002 16.1999 22.6002C15.8999 22.3002 15.8999 21.7002 16.1999 21.4002L19.9999 17.6002H9.7999C9.2999 17.6002 8.8999 17.2002 8.8999 16.7002C8.8999 16.2002 9.2999 15.8002 9.7999 15.8002H19.9999L16.1999 12.0002C15.8999 11.7002 15.8999 11.1002 16.1999 10.8002C16.4999 10.5002 17.0999 10.5002 17.3999 10.8002L22.6999 16.1002C22.9999 16.4002 22.9999 17.0002 22.6999 17.3002Z' fill='%23321432'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.custom-language .lang_list_class li:hover::before {
+    transform: translateX(0%);
+    opacity: 1;
+}
+
+.custom-language .lang_list_class li:hover a {
+    padding-left: 35px;
+}
+
+.custom-language .lang_list_class li a {
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+    color: var(--black);
+    text-decoration: none!important;
+    position: relative;
+    opacity: 1;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+@media only screen and (min-width: 1001px) {
+    .custom-language .lang_list_class {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

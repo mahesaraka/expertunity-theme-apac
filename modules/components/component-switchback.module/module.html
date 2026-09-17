@@ -1,0 +1,94 @@
+{# ============================ MODULE SETTINGS ============================ #}
+
+{% from "expertunity-theme-apac-au-nz/macros/video.html" import video %}
+
+{# ========= BUTTON SETTINGS ========= #}
+
+{% set button_style = "{{ module.text_content.cta_settings.button_settings.button_type }}" %}
+{% set button_colour = "{{ module.text_content.cta_settings.button_settings.button_colour }}" %}
+    
+{# ========= END BUTTON SETTINGS ========= #}
+
+{# ========= MEDIA STYLING OPTIONS ========= #}
+  {% require_css %}
+    <style>
+      {% scope_css %}
+        {% if module.media_content.contain_media %}
+          .switchback-column.switchback-column--media {
+            min-height: auto;
+          }
+          {% if module.media_content.media_type == "video" %}
+            .switchback-column.switchback-column--media .video-media {
+              height: auto;
+            }
+          {% else %}
+            .switchback-column.switchback-column--media img {
+              height: auto;
+            }
+          {% endif %}
+          {% if module.media_content.media_alignment == "top" %}
+            .switchback-column.switchback-column--media {
+              align-items: flex-start;
+            }
+          {% elif module.media_content.media_alignment == "bottom" %}
+            .switchback-column.switchback-column--media {
+              align-items: flex-end;
+            }
+          {% endif %}
+        {% endif %}
+        {% if module.text_content.cta_settings.button_settings.button_type == "custom-cta" %}
+          .custom-cta {
+            background-color: {{ module.text_content.cta_settings.button_settings.background_color.rgba }};
+            border-color: {{ module.text_content.cta_settings.button_settings.border_color.rgba }};
+            color: {{ module.text_content.cta_settings.button_settings.button_text_color.rgba }};
+          }
+
+          .custom-cta:hover {
+            background-color: {{ module.text_content.cta_settings.button_settings.background_color_hover.rgba }};
+            border-color: {{ module.text_content.cta_settings.button_settings.border_color_hover.rgba }};
+            color: {{ module.text_content.cta_settings.button_settings.button_text_color_hover.rgba }};
+          }
+        {% endif %}
+      {% end_scope_css %}
+    </style>
+  {% end_require_css %}
+
+{# ========= END MEDIA STYLING OPTIONS ========= #}
+
+{# ========================= MODULE HTML ========================= #}
+
+<div class="switchback{%if module.style.desktop_layout == "text-right" %} switchback--reverse{% endif %}{% if module.style.mobile_layout == 'text-bottom' %} switchback--media-top{% endif %}{% if module.width == "full-width" %} switchback--full-width{% endif %}{% if (module.media_content.images | length > 1) and (module.width != "full-width") %} switchback--dual-image{% endif %}">
+    <div class="switchback-gradient"></div>
+    {% if module.width == "full-width" %}
+        <div class="content-wrapper">
+    {% endif %}
+<div class="switchback-column switchback-column--content" {% if module.style.desktop_layout == "text-right"%}data-aos="fade-left"{% else %}data-aos="fade-right"{% endif %} data-aos-duration="1000">
+            {{ module.text_content.content }}
+            {% if module.text_content.add_cta %}
+                <div class="switchback-column__cta-wrapper">
+                    {% if module.text_content.cta_settings.cta_type == 'cta' %}
+                        {% cta guid="{{ module.text_content.cta_settings.cta_field }}" %}
+                    {% else %}
+                        <a  {% if module.text_content.cta_settings.button_settings.new_tab %}target="_blank"{% endif %}class="{{button_style}} {{button_colour}}" href="{{ module.text_content.cta_settings.button_settings.button_url.href }}">{{ module.text_content.cta_settings.button_settings.button_text }}</a>
+                    {% endif %}
+                </div>
+            {% endif %}
+        </div>
+        <div class="switchback-column switchback-column--media" data-aos="fade" data-aos-duration="1000">
+            {% if module.media_content.media_type == "video" %}
+                {{ video(module.media_content.video_file, module.media_content.video_thumbnail, module.media_content.autoplay, module.media_content.loop) }}
+            {% else %}
+                {% for image in module.media_content.images %}
+                    <img src="{{ resize_image_url(image.src, 0, 1000,0 )}}" alt="{{ image.alt }}">
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% if module.width == 'full-width '%}
+        </div>
+    {% endif %}
+</div>
+
+
+{# ========================= MODULE CSS ========================= #}
+
+

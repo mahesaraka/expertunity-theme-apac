@@ -1,0 +1,600 @@
+[ {
+  "id" : "1d44c7f8-91ac-6280-2c5f-8528824d7f2e",
+  "name" : "section_id",
+  "label" : "Section ID",
+  "help_text" : "If you need to apply an id to the DND section, enter the name of your section into this field.",
+  "required" : false,
+  "locked" : false,
+  "placeholder" : "#optional-id",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "9ba5ae24-d6b1-65de-bfde-739cd74bf11e",
+  "name" : "background_settings",
+  "label" : "Background Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3b968e4a-7059-ac51-9386-c751fb6d2fbe",
+    "name" : "background_type",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Select background type",
+    "choices" : [ [ "colour", "Colour" ], [ "gradient", "Gradient" ], [ "image", "Image" ], [ "video", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "5a8c98ef-3340-30f7-d80c-3efa55f08428",
+    "name" : "video_settings",
+    "label" : "Video Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.background_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "picker" : "video",
+      "id" : "3382a5e4-59a2-dded-5957-93e85312ec58",
+      "name" : "source",
+      "label" : "Source",
+      "required" : false,
+      "locked" : false,
+      "type" : "file",
+      "display_width" : null,
+      "default" : "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Video%20Clips/Aleksi%20Kulmala%20proxy/Aleksi%20Kulmala%20proxy.mp4"
+    }, {
+      "id" : "dd7e7185-c26e-bce0-d06c-38df1d3b5d1e",
+      "name" : "overlay_colour",
+      "label" : "Overlay Colour",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#321432",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "8c4c8b63-32bb-491f-ebc1-6f2acc13ae6a",
+      "name" : "overlay_opacity",
+      "label" : "Overlay Opacity",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 1,
+      "step" : 0.1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 0.6000000000000001
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "source" : "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Video%20Clips/Aleksi%20Kulmala%20proxy/Aleksi%20Kulmala%20proxy.mp4",
+      "overlay_colour" : {
+        "color" : "#321432",
+        "opacity" : 100
+      },
+      "overlay_opacity" : 0.6000000000000001
+    }
+  }, {
+    "id" : "801533b1-cc20-b8e2-379e-3b13919489fb",
+    "name" : "image_settings",
+    "label" : "Image Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.background_type",
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "10b1a88e-5038-7169-90da-362b1e6f2892",
+      "name" : "background_image",
+      "label" : "Background Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Imagery/penguin-pickup__background-vector__head--amber.svg",
+        "alt" : "penguin-pickup__background-vector__head--amber",
+        "loading" : "lazy",
+        "width" : 291,
+        "height" : 150,
+        "max_width" : 291,
+        "max_height" : 150
+      }
+    }, {
+      "id" : "944d3562-e1a0-9271-1000-1d0a8b37824a",
+      "name" : "background_size",
+      "label" : "Background Size",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "cover", "Cover" ], [ "contain", "Contain" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    }, {
+      "id" : "61af9b08-9cec-0580-815b-6f2f0b019b9c",
+      "name" : "background_position",
+      "label" : "Background Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "top center", "Top" ], [ "top right", "Top Right" ], [ "top left", "Top Left" ], [ "center center", "Center" ], [ "center left", "Center Left" ], [ "center right", "Center Right" ], [ "left", "Left" ], [ "right", "Right" ], [ "bottom", "Bottom" ], [ "bottom right", "Bottom Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Imagery/penguin-pickup__background-vector__head--amber.svg",
+        "alt" : "penguin-pickup__background-vector__head--amber",
+        "loading" : "lazy",
+        "width" : 291,
+        "height" : 150,
+        "max_width" : 291,
+        "max_height" : 150
+      }
+    }
+  }, {
+    "id" : "5be96f37-fad1-fec0-de8c-d2eec4c20c0b",
+    "name" : "gradient_settings",
+    "label" : "Gradient Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.background_type",
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "0e3577d8-6cc8-489c-e3ef-70f344d51585",
+      "name" : "upper_gradient_colour",
+      "label" : "Upper Gradient Colour",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "98ac5ff5-91da-de4e-9c45-b637d3cb7d9b",
+      "name" : "lower_gradient_colour",
+      "label" : "Lower Gradient Colour",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#EFECF1",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "18d9f0b0-7d9e-989c-491b-738db2467b33",
+      "name" : "upper_gradient_position",
+      "label" : "Upper Gradient Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "step" : 1,
+      "suffix" : "%",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 0
+    }, {
+      "id" : "46998f0e-12d8-6b99-77e1-c1cde4d361a0",
+      "name" : "lower_gradient_position",
+      "label" : "Lower Gradient Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "step" : 1,
+      "suffix" : "%",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 0
+    }, {
+      "id" : "0a224a76-a0d6-b9a5-dd7a-9bcc13e18254",
+      "name" : "gradient_angle",
+      "label" : "Gradient Angle",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 360,
+      "step" : 1,
+      "prefix" : "",
+      "suffix" : " deg",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 0
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "upper_gradient_colour" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "lower_gradient_colour" : {
+        "color" : "#EFECF1",
+        "opacity" : 100
+      },
+      "upper_gradient_position" : 0,
+      "lower_gradient_position" : 0,
+      "gradient_angle" : 0
+    }
+  }, {
+    "id" : "d287c388-922b-aefe-3b3a-2dafe3619c37",
+    "name" : "background_colour",
+    "label" : "Background Colour",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.background_type",
+      "controlling_value_regex" : "colour",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#EFECF1",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "be404c74-885f-cb14-8435-006a6c1d9d95",
+    "name" : "override_mobile",
+    "label" : "Override Mobile",
+    "inline_help_text" : "If you want different background settings on mobile.",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "e8278054-4c60-66e2-57c1-1cc1b7e28f36",
+    "name" : "background_type_mobile",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.override_mobile",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "placeholder" : "Select background type",
+    "choices" : [ [ "colour", "Colour" ], [ "gradient", "Gradient" ], [ "image", "Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "b6c1ca67-99e6-1765-020b-aee538fcf994",
+    "name" : "image_settings_mobile",
+    "label" : "Image Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.background_type_mobile",
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "565acc4a-78da-bfac-aa95-368cf8ef3115",
+      "name" : "background_image",
+      "label" : "Background Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Imagery/penguin-pickup__background-vector__head--amber.svg",
+        "alt" : "penguin-pickup__background-vector__head--amber",
+        "loading" : "lazy",
+        "width" : 291,
+        "height" : 150,
+        "max_width" : 291,
+        "max_height" : 150
+      }
+    }, {
+      "id" : "2ce520b0-3d22-bf18-8ba1-0f294379c5f4",
+      "name" : "background_size",
+      "label" : "Background Size",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "cover", "Cover" ], [ "contain", "Contain" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    }, {
+      "id" : "5e3e60b7-b322-e375-ef85-c2a392ad3adf",
+      "name" : "background_position",
+      "label" : "Background Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "top", "Top" ], [ "left", "Left" ], [ "right", "Right" ], [ "bottom", "Bottom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Imagery/penguin-pickup__background-vector__head--amber.svg",
+        "alt" : "penguin-pickup__background-vector__head--amber",
+        "loading" : "lazy",
+        "width" : 291,
+        "height" : 150,
+        "max_width" : 291,
+        "max_height" : 150
+      }
+    }
+  }, {
+    "id" : "36f40e55-3cb2-a123-2665-f83fe1524f06",
+    "name" : "gradient_settings_mobile",
+    "label" : "Gradient Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.background_type_mobile",
+      "controlling_value_regex" : "gradient",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "d557aa5b-2101-8535-0089-7b5fb9c39223",
+      "name" : "upper_gradient_colour",
+      "label" : "Upper Gradient Colour",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "92ff5a85-017b-3645-91a2-4884da27d7bd",
+      "name" : "lower_gradient_colour",
+      "label" : "Lower Gradient Colour",
+      "required" : false,
+      "locked" : false,
+      "show_opacity" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#EFECF1",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "332d34d4-4a68-394a-0f65-2ee0bad4de0c",
+      "name" : "upper_gradient_position",
+      "label" : "Upper Gradient Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "step" : 1,
+      "suffix" : "%",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 0
+    }, {
+      "id" : "8ae19bb5-8ec4-1ff8-c304-ed72c65573ce",
+      "name" : "lower_gradient_position",
+      "label" : "Lower Gradient Position",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "step" : 1,
+      "suffix" : "%",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 0
+    }, {
+      "id" : "51bd8bab-83b4-09b5-7441-93724dc47ebe",
+      "name" : "gradient_angle",
+      "label" : "Gradient Angle",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "min" : 0,
+      "max" : 360,
+      "step" : 1,
+      "prefix" : "",
+      "suffix" : " deg",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 0
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "upper_gradient_colour" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "lower_gradient_colour" : {
+        "color" : "#EFECF1",
+        "opacity" : 100
+      },
+      "upper_gradient_position" : 0,
+      "lower_gradient_position" : 0,
+      "gradient_angle" : 0
+    }
+  }, {
+    "id" : "4b3b9405-be34-cce7-7697-0765a6c7c4cc",
+    "name" : "background_colour_mobile",
+    "label" : "Background Colour",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "background_settings.background_type_mobile",
+      "controlling_value_regex" : "colour",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "show_opacity" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#EFECF1",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "video_settings" : {
+      "source" : "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Video%20Clips/Aleksi%20Kulmala%20proxy/Aleksi%20Kulmala%20proxy.mp4",
+      "overlay_colour" : {
+        "color" : "#321432",
+        "opacity" : 100
+      },
+      "overlay_opacity" : 0.6000000000000001
+    },
+    "image_settings" : {
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Imagery/penguin-pickup__background-vector__head--amber.svg",
+        "alt" : "penguin-pickup__background-vector__head--amber",
+        "loading" : "lazy",
+        "width" : 291,
+        "height" : 150,
+        "max_width" : 291,
+        "max_height" : 150
+      }
+    },
+    "gradient_settings" : {
+      "upper_gradient_colour" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "lower_gradient_colour" : {
+        "color" : "#EFECF1",
+        "opacity" : 100
+      },
+      "upper_gradient_position" : 0,
+      "lower_gradient_position" : 0,
+      "gradient_angle" : 0
+    },
+    "background_colour" : {
+      "color" : "#EFECF1",
+      "opacity" : 100
+    },
+    "override_mobile" : false,
+    "image_settings_mobile" : {
+      "background_image" : {
+        "size_type" : "auto",
+        "src" : "https://44308188.fs1.hubspotusercontent-na1.net/hubfs/44308188/Penguin%20Pickup%20Theme%20Assets/Imagery/penguin-pickup__background-vector__head--amber.svg",
+        "alt" : "penguin-pickup__background-vector__head--amber",
+        "loading" : "lazy",
+        "width" : 291,
+        "height" : 150,
+        "max_width" : 291,
+        "max_height" : 150
+      }
+    },
+    "gradient_settings_mobile" : {
+      "upper_gradient_colour" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "lower_gradient_colour" : {
+        "color" : "#EFECF1",
+        "opacity" : 100
+      },
+      "upper_gradient_position" : 0,
+      "lower_gradient_position" : 0,
+      "gradient_angle" : 0
+    },
+    "background_colour_mobile" : {
+      "color" : "#EFECF1",
+      "opacity" : 100
+    }
+  }
+} ]

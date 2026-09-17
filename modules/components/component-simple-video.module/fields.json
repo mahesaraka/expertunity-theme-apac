@@ -1,0 +1,96 @@
+[ {
+  "id" : "14f04de5-2004-c381-1df6-895652170eca",
+  "name" : "video_thumbnail",
+  "label" : "Video Thumbnail",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : "switchback-placeholder",
+    "loading" : "lazy",
+    "width" : 1200,
+    "height" : 800,
+    "max_width" : 1200,
+    "max_height" : 800
+  }
+}, {
+  "picker" : "video",
+  "id" : "00f70da0-d6dd-a8af-7050-a7f1ce6b1b16",
+  "name" : "video_file",
+  "label" : "Video File",
+  "required" : false,
+  "locked" : false,
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://144265894.fs1.hubspotusercontent-eu1.net/hubfs/144265894/placeholder-video.mp4"
+}, {
+  "id" : "e69206ec-f593-3436-4ce8-eac2497d6aa6",
+  "name" : "autoplay",
+  "label" : "Autoplay?",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "6aaa2b57-9c3a-6ba0-dd1e-737803fe367a",
+  "name" : "loop",
+  "label" : "Loop?",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "fcc823e5-07a5-63c0-e2ce-44da50cab3d0",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b545f364-a1ca-7930-6ac3-5410f26b078a",
+    "name" : "desktop_layout",
+    "label" : "Desktop Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Text Left, Media Right" ], [ "text-right", "Text Right, Media Left" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-left"
+  }, {
+    "id" : "3a433818-604c-f24e-7eef-f8f0be5e1517",
+    "name" : "mobile_layout",
+    "label" : "Mobile Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-bottom", "Media Top, Text Bottom" ], [ "text-top", "Media Bottom, Text Top" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-bottom"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "desktop_layout" : "text-left",
+    "mobile_layout" : "text-bottom"
+  }
+} ]

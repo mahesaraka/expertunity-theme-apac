@@ -1,0 +1,80 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+
+{# ==== DEV NOTES ====
+
+To use this macro, please ensure your module has swiper.js
+included in the dependencies and all params are set correctly.
+
+-- modifier is to make this logo slider unique, name it something related to your module. e.g. client-logos
+-- js_variable is to make the JS variable for the swiper unique, name it something related to your module. e.g
+clientLogos
+-- logo_repeater is the name of your repeater field in your module. e.g. module.client_logos
+-- autoplay is a boolean to determine if the slider should autoplay, make this the boolean in your module. e.g.
+module.autoplay
+-- speed is a numerical value that controls the speed of the slider, make this the numerical variable in your module.
+e.g. module.speed
+-- theme should be set to "light" or "dark" to control the theme of the slider.
+-- gradient colour should be set to your sections background colour e.g. module.styles.background_color.color
+
+#}
+
+{% macro logo_slider(modifier, js_variable, logo_repeater, no_delay , autoplay, speed, theme, gradient_color) %}
+
+<div class="logo-slider logo-slider--{{modifier}} {{ 'no-delay' if no_delay }}">
+    <div class="swiper-wrapper">
+        {% for logo in logo_repeater %}
+        <div class="swiper-slide">
+            <div class="logo-slider__logo">
+                <img src="{{ logo.src|escape_url }}" alt="{{ logo.alt }}" loading="lazy" width="350" height="100">
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    /* .logo-slider::before{
+        background: linear-gradient(-90deg,rgba(255, 255, 255, 0) 0%, {{ gradient_color }} 100%);
+      }
+
+      .logo-slider::after{
+        background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, {{ gradient_color }} 100%);
+      } */
+</style>
+
+{% require_js %}
+<script>
+    const LogoSlider{{ js_variable }} = new Swiper('.logo-slider--{{modifier}}', {
+        direction: 'horizontal',
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 40,
+        loop: true,
+        freemode: true,
+                {% if autoplay %}
+    autoplay: {
+        {% if no_delay %}
+        delay: 0,
+            {% else %}
+    delay: 500,
+        {% endif %}
+                },
+    speed: { { speed } },
+    {% endif %}
+    breakpoints: {
+        1100: {
+            slidesPerView: 6,
+                spaceBetween: 80,
+                    },
+        767: {
+            slidesPerView: 5,
+                spaceBetween: 64,
+                    }
+    }
+            });
+</script>
+{% end_require_js %}
+{% endmacro %}

@@ -1,0 +1,122 @@
+/* 
+
+Need to make individual adjustments? -- Please use modifier classes e.g. slider-navigation--team-slider
+inside of your modules respective css file 
+
+*/
+
+
+/* Slider Navigation */
+
+.slider-navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32px;
+}
+
+.slider-navigation__item {
+    width: 50px;
+    height: 50px;
+    background-color: var(--white);
+    border: 1px solid rgba(0, 141, 127, 0.1);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+    cursor: pointer;
+    opacity: 1;
+}
+
+.slider-navigation__item.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.slider-navigation__item:hover {
+    background-color: var(--teal);
+    border-color: var(--teal);
+}
+
+.slider-navigation__item svg {
+    width: 28px;
+    max-width: 28px;
+    height: auto;
+}
+
+.slider-navigation__item svg path {
+    fill: var(--teal);
+    transition: var(--transition);
+}
+
+.slider-navigation__item:hover svg path {
+    fill: var(--white);
+}
+
+/* Logo Slider */
+
+
+.client-logo-slider .swiper-slide {
+    height: auto;
+}
+
+.logo-slider {
+    position: relative;
+}
+
+.logo-slider::before {
+    /* content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100%;
+    z-index: 5; */
+}
+
+.logo-slider::after {
+    /* content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 5; */
+}
+
+
+.logo-slider__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.logo-slider.logo-slider--light .logo-slider__logo img {
+    filter: brightness(0) saturate(100%) invert(1);
+    -webkit-filter: brightness(0) saturate(100%) invert(1);
+}
+
+.logo-slider.logo-slider--dark .logo-slider__logo img {
+    filter: brightness(0) saturate(100%);
+    -webkit-filter: brightness(0) saturate(100%);
+}
+
+.logo-slider__logo img {
+    min-height: 70px;
+    max-height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+    .logo-slider__logo img {
+        min-height: 30px;
+        max-height: 30px;
+    }
+}
+
+.no-delay .swiper-wrapper {
+    transition-timing-function: linear;
+}

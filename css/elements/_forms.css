@@ -1,0 +1,604 @@
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxField>*:not(:last-child) + .hsfc-ErrorAlert,
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxField label,
+.custom-form [data-hsfc-id=Renderer] .hsfc-RichText,
+form .hs-richtext,
+form .hs-richtext p {
+    margin-bottom: 0.5rem;
+    font-size: var(--form-misc-size-mobile) !important;
+}
+
+form label.hs-form-booleancheckbox-display {
+    font-size: var(--form-misc-size-mobile) ;
+    margin-top: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+    .custom-form .hsfc-CheckboxField [data-hsfc-id=Renderer] .hsfc-ErrorAlert,
+    .custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxField label,
+    .custom-form [data-hsfc-id=Renderer] .hsfc-RichText,
+    form label.hs-form-booleancheckbox-display,
+    form .hs-richtext,
+    form .hs-richtext p {
+        font-size: var(--form-misc-size-desktop) !important;
+    }
+}
+
+form .hs-richtext img {
+    max-width: 100% !important;
+}
+
+.legal-consent-container {
+    margin-bottom: 2rem;
+    color: #988998;
+}
+
+form .legal-consent-container .hs-form-booleancheckbox-display>span {
+  color: #988998;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxField label,
+.custom-form [data-hsfc-id=Renderer] .hsfc-RichText {
+  color: #988998 !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-FieldLabel__RequiredIndicator {
+  color: var(--orange) !important;
+}
+
+.legal-consent-container a {
+  text-decoration: underline !important;
+  color: var(--purple) !important;
+}
+
+form .legal-consent-container .hs-form-booleancheckbox-display>span {
+    margin-left: 0;
+    margin-top: 3px;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-Step .hsfc-Step__Content {
+  padding: 0 !important;
+}
+
+/* Fields */
+
+form .hs-form-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    float: none !important;
+    width: 100% !important;
+    margin-bottom: 1.4rem;
+}
+
+form .hs-form-field .input {
+    margin-right: 0 !important;
+}
+
+form .hs-form-field ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+form fieldset {
+    border: none;
+    max-width: 100% !important;
+}
+
+form fieldset:not(:last-of-type) {
+    margin-bottom: 1.4rem;
+}
+
+form fieldset .hs-form-field {
+    margin-bottom: 0;
+}
+
+form fieldset.form-columns-2,
+form fieldset.form-columns-3 {
+    display: grid;
+    align-items: flex-start;
+    grid-gap: 1.4rem 1.4rem;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 768px) {
+    form fieldset.form-columns-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    form fieldset.form-columns-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Custom styles */
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-Row > div:not(.hsfc-DataPrivacyField, .hsfc-CheckboxField, .hsfc-RichText),
+form .hs-form-field:not(.hs-fieldtype-booleancheckbox) {
+    display: inline-block;
+    width: 100%;
+    border: var(--form-custom-input-border-size) solid var(--form-custom-input-border-color);
+    border-radius: var(--form-custom-input-border-radius);
+    background-color: var(--form-custom-input-background-color);
+    padding: var(--form-custom-input-padding-top) var(--form-custom-input-padding-right) var(--form-custom-input-padding-bottom) var(--form-custom-input-padding-left);
+}
+/* Labels */
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-FieldLabel,
+form label {
+    display: block;
+    margin-bottom: var(--form-label-spacing-bottom);
+    color: var(--form-label-color);
+    font-family: var(--form-label-font-family);
+    font-size: var(--form-label-font-size-mobile);
+    line-height: 1;
+    font-weight: var(--form-label-font-weight);
+    text-transform: var(--form-label-transform);
+}
+
+@media only screen and (min-width: 768px) {
+    .custom-form [data-hsfc-id=Renderer] .hsfc-FieldLabel,
+    form label {
+        font-size: var(--form-label-font-size-desktop);
+    }
+}
+
+form .inputs-list.multi-container label span,
+form .hs-form-booleancheckbox label span {
+    color: initial;
+    margin-top: 3px;
+}
+
+.custom-form .hsfc-Row .hsfc-DropdownOptions__Search input[type=text] {
+  padding: 5px 10px;
+}
+
+/* Form Title */
+.form-title {
+    margin-bottom: 0;
+}
+
+/* Help text */
+form legend {
+    font-size: 0.875rem;
+}
+
+/* Inputs */
+
+.custom-form .hsfc-Row input[type=text],
+.custom-form .hsfc-Row input[type=search],
+.custom-form .hsfc-Row input[type=email],
+.custom-form .hsfc-Row input[type=password],
+.custom-form .hsfc-Row input[type=tel],
+.custom-form .hsfc-Row input[type=number],
+.custom-form .hsfc-Row input[type=file],
+.custom-form .hsfc-Row select,
+.custom-form .hsfc-Row textarea,
+form input[type=text],
+form input[type=search],
+form input[type=email],
+form input[type=password],
+form input[type=tel],
+form input[type=number],
+form input[type=file],
+form select,
+form textarea {
+    display: inline-block;
+    width: 100%;
+    border: var(--form-input-border-size) solid var(--form-input-border-color);
+    border-radius: var(--form-input-border-radius);
+    background-color: var(--form-input-background-color);
+    padding: var(--form-input-padding-top) var(--form-input-padding-right) var(--form-input-padding-bottom) var(--form-input-padding-left);
+    color: var(--form-input-color);
+
+    font-family: var(--form-input-font-family);
+    font-size: var(--form-input-font-size-mobile);
+    line-height: 1.3;
+    font-weight: var(--form-input-font-weight);
+    text-transform: var(--form-input-transform);
+}
+
+@media only screen and (min-width: 768px) {
+    .custom-form .hsfc-Row input[type=text],
+    .custom-form .hsfc-Row input[type=search],
+    .custom-form .hsfc-Row input[type=email],
+    .custom-form .hsfc-Row input[type=password],
+    .custom-form .hsfc-Row input[type=tel],
+    .custom-form .hsfc-Row input[type=number],
+    .custom-form .hsfc-Row input[type=file],
+    .custom-form .hsfc-Row select,
+    .custom-form .hsfc-Row textarea,
+    form input[type=text],
+    form input[type=search],
+    form input[type=email],
+    form input[type=password],
+    form input[type=tel],
+    form input[type=number],
+    form input[type=file],
+    form select,
+    form textarea {
+        font-size: var(--form-input-font-size-desktop);
+    }
+}
+
+form textarea {
+    resize: vertical;
+    line-height: 1.2;
+    border-radius: 10px;
+}
+
+.custom-form .hsfc-Row input::placeholder,
+form input::placeholder,
+form select::placeholder,
+form textarea::placeholder {
+    opacity: 1;
+    color: var(--form-placeholder-color);
+}
+
+.custom-form .hsfc-Row input:focus,
+.custom-form .hsfc-Row select:focus,
+.custom-form .hsfc-Row textarea:focus,
+.custom-form .hsfc-Row input:focus-visible,
+.custom-form .hsfc-Row select:focus-visible,
+.custom-form .hsfc-Row textarea:focus-visible,
+.custom-form .hsfc-Row input:focus-within,
+.custom-form .hsfc-Row select:focus-within,
+.custom-form .hsfc-Row textarea:focus-within,
+.custom-form .hsfc-Row input:target,
+.custom-form .hsfc-Row select:target,
+.custom-form .hsfc-Row textarea:target,
+.custom-form .hsfc-Row input:active,
+.custom-form .hsfc-Row select:active,
+.custom-form .hsfc-Row textarea:active,
+.custom-form .hsfc-Row input:hover,
+.custom-form .hsfc-Row select:hover,
+.custom-form .hsfc-Row textarea:hover,
+form input:focus,
+form input:focus-visible,
+form input:focus-within,
+form input:active,
+form input:target,
+form select:focus,
+form select:focus-visible,
+form select:focus-within,
+form select:active,
+form select:target,
+form textarea:focus,
+form textarea:focus-visible,
+form textarea:focus-within,
+form textarea:active,
+form textarea:target {
+    border-color: var(--form-input-border-focus-color);
+    outline: none;
+    box-shadow: none;
+}
+
+form legend.hs-field-desc {
+    position: absolute;
+    right: 0;
+    width: auto !important;
+}
+
+/* Inputs - date picker */
+
+.hs-dateinput {
+    position: relative;
+}
+
+.hs-dateinput:before {
+    content: '';
+    position: absolute;
+    right: var(--form-input-padding-right);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: var(--form-date-icon);
+}
+
+.fn-date-picker .pika-table thead th {
+    color: #FFF;
+}
+
+.fn-date-picker td.is-selected .pika-button {
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.fn-date-picker td .pika-button:hover,
+.fn-date-picker td .pika-button:focus {
+    border-radius: 0 !important;
+    color: #FFF;
+}
+
+/* Inputs - file picker */
+
+form input[type=file] {
+    border-radius: 0;
+    background-color: transparent;
+    border: initial;
+    padding: initial;
+}
+
+.hs-fieldtype-select .input {
+    position: relative;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-DropdownInput,
+.hs-fieldtype-select .input select {
+    position: relative;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-DropdownInput::after,
+.hs-fieldtype-select .input::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 11px;
+    right: var(--form-input-padding-right);
+    top: 50%;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: var(--form-dropdown-icon);
+}
+
+.hs-fieldtype-select .input::after {
+  top: 46%;
+}
+
+select.hs-input {
+    appearance: none;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-DropdownInput .hsfc-DropdownInput__Caret {
+  display: none;
+}
+
+/* Dropdown */
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-DropdownOptions__List__ListItem::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* GDPR */
+
+/* Validation */
+
+.hs-form-required {
+    color: var(--form-error-color);
+}
+
+.hs-input.invalid.error {
+    border-color: var(--form-error-color);
+}
+
+ul.no-list.hs-error-msgs.inputs-list li::before {
+  display: none;
+  margin-bottom: 0;
+  margin-top: 0.5rem;
+}
+
+.hs-error-msg {
+  margin-top: 0.5rem;
+  color: var(--form-error-color);
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+form input.hs-input.invalid.error {
+    border-color: var(--orange);
+}
+
+/* Submit button */
+
+form input[type=submit],
+form .hs-button {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.15s linear;
+    white-space: normal;
+}
+
+/* Captcha */
+
+.grecaptcha-badge {
+    margin: 0 auto;
+}
+
+/* Position label text against custom radio and checkboxes */
+
+ul.inputs-list.multi-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--multi-list-gap);
+    margin-top: var(--multi-list-spacing-top);
+}
+
+ul.inputs-list li::before {
+  display: none;
+  content: none;
+}
+
+label.hs-form-booleancheckbox-display,
+label.hs-form-checkbox-display,
+label.hs-form-radio-display {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--label-check-spacing);
+    margin-bottom: 0;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-DataPrivacyField>*:not(:last-child) {
+  margin-bottom: 0 !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioFieldGroup__Options label>input + span,
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput + span {
+  margin-left: 25px;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxField label > input + span {
+  margin-left: 10px;
+}
+
+/* Custom checkbox */
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput:active,
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput:focus,
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput:hover {
+  box-shadow: none !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput:checked:after {
+  content: none !important;
+  display: none !important;
+  box-shadow: none !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput,
+input[type="checkbox"] {
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    width: var(--form-checkbox-width) !important;
+    height: var(--form-checkbox-height) !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput::before,
+input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--form-checkbox-width);
+    height: var(--form-checkbox-height);
+    background-image: var(--form-checkbox-icon);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: var(--transition);
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput::before {
+  top: 5px !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-CheckboxInput:checked::before,
+input[type="checkbox"]:checked::before {
+    background-image: var(--form-checkbox-checked-icon);
+}
+
+/* Custom Radio Button Styling */
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput:active,
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput:focus,
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput:hover {
+  box-shadow: none !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput:checked:after {
+  content: none !important;
+  display: none !important;
+  box-shadow: none !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput,
+.hs-form-radio-display input[type="radio"] {
+    position: relative;
+    cursor: pointer;
+    appearance: none;
+    /* Hide default radio button */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: var(--form-radio-width);
+    height: var(--form-radio-height);
+    margin: 0;
+    padding: 0;
+    background-color: var(--form-radio-bg-color);
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput::before,
+.hs-form-radio-display input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: var(--form-radio-width);
+    height: var(--form-radio-height);
+    background-image: var(--form-radio-icon);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: var(--transition);
+    pointer-events: none;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput::before {
+  top: 5px !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-RadioInput:checked::before,
+.hs-form-radio-display input[type="radio"]:checked::before {
+    background-image: var(--form-radio-checked-icon);
+}
+
+/* Buttons */
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-NavigationRow__Buttons:has(>*:only-child) {
+  justify-content: flex-start;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-NavigationRow {
+  margin-top: 20px;
+}
+
+.hs-form-html [data-hsfc-id=Renderer] .hsfc-Button,
+.hs_submit.hs-submit input[type="submit"].hs-button {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 0.9!important;
+  padding: 25px 45px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  max-width: max-content;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-Button,
+.hs_submit.hs-submit input[type="submit"].hs-button {
+  background-color: var(--purple) !important;
+  border-color: var(--purple) !important;
+  color: white !important;
+}
+
+.custom-form [data-hsfc-id=Renderer] .hsfc-Button:hover,
+.hs_submit.hs-submit input[type="submit"].hs-button:hover {
+  background-color: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: var(--white) !important;
+  font-weight: 600!important;
+}

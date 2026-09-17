@@ -1,0 +1,20 @@
+<div id="{{ module.anchor_id }}" class="anchor">
+    {% if is_in_editor %}
+        <h4>ANCHOR POINT</h4>
+    {% endif %}
+</div>
+    
+{# ============================== MODULE CSS ============================== #}
+
+<style>
+    {% scope_css %}
+        .anchor {
+            top: -{{ module.spacing_top_mobile }}px;
+        }
+        @media only screen and (min-width: 768px) {
+            .anchor {
+                top: -{{ module.spacing_top }}px;
+            }
+        }
+    {% end_scope_css %}
+</style>

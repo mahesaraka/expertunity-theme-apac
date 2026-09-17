@@ -1,0 +1,17 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Blank
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+  {% dnd_area "dnd_area"
+    label="Main section" %}
+    {% dnd_section %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html=" <div style=\"text-align: center\">   <h1>Blank template</h1>   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> </div> " %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+{% endblock body %}

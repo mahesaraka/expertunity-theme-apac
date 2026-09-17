@@ -1,0 +1,712 @@
+[
+  {
+    "id": "f6c8996f-d567-ce90-e55b-95e888dc8c08",
+    "name": "content",
+    "label": "Content",
+    "required": false,
+    "locked": true,
+    "type": "richtext",
+    "display_width": null,
+    "default": "<h2 style=\"color: white;\">Join the Network</h2>\n<p style=\"color: white;\" class=\"big-text\">Ready to build better, together?</p>"
+  },
+  {
+    "id": "4f61e99a-f447-a47f-ecee-287bfa05513c",
+    "name": "cta_settings",
+    "label": "CTA Settings",
+    "required": false,
+    "locked": true,
+    "children": [
+      {
+        "id": "cdd98c72-6c6e-03b1-2a9c-d3b00a8fa3a3",
+        "name": "cta_type",
+        "label": "CTA Type",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "placeholder": "Button or CTA?",
+        "choices": [
+          [
+            "button",
+            "Button"
+          ],
+          [
+            "cta",
+            "Hubspot CTA"
+          ]
+        ],
+        "multiple": false,
+        "reordering_enabled": true,
+        "preset": null,
+        "type": "choice",
+        "display_width": null
+      },
+      {
+        "id": "0fecf7da-eaaf-d757-8903-a794c8e8daae",
+        "name": "cta_field",
+        "label": "CTA",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": null,
+          "controlling_field_path": "cta_settings.cta_type",
+          "controlling_value_regex": "cta",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "type": "cta",
+        "display_width": null,
+        "default": ""
+      },
+      {
+        "id": "8a73a6ec-0562-314b-0b96-5105578d0da3",
+        "name": "button_settings",
+        "label": "Button Settings",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": null,
+          "controlling_field_path": "cta_settings.cta_type",
+          "controlling_value_regex": "button",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "children": [
+          {
+            "id": "f360231a-bec6-734b-ea33-4da46c0239b1",
+            "name": "button_type",
+            "label": "Button Type",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "placeholder": "Please choose a button style",
+            "choices": [
+              [
+                "primary-cta",
+                "Primary (Filled)"
+              ],
+              [
+                "secondary-cta",
+                "Secondary (Hollow)"
+              ],
+              [
+                "custom-cta",
+                "Custom"
+              ]
+            ],
+            "multiple": false,
+            "reordering_enabled": true,
+            "preset": null,
+            "type": "choice",
+            "display_width": null,
+            "default": "primary-cta"
+          },
+          {
+            "id": "pulse_effect",
+            "name": "pulse_effect",
+            "label": "Pulse effect/animation",
+            "required": false,
+            "locked": false,
+            "display": "toggle",
+            "type": "boolean",
+            "display_width": null,
+            "default": false
+          },
+          {
+            "id": "5ef9cc91-908d-c81c-3fd7-2a770d843468",
+            "name": "trigger_modal",
+            "label": "Trigger Modal?",
+            "required": false,
+            "locked": false,
+            "display": "toggle",
+            "type": "boolean",
+            "display_width": null,
+            "default": false
+          },
+          {
+            "id": "bc1af4c0-f2e9-2896-e05c-3ce23edd19f4",
+            "name": "button_colour",
+            "label": "Button Colour",
+            "required": false,
+            "locked": false,
+            "display": "select",
+            "placeholder": "Please Choose A Button Colour",
+            "choices": [
+              [
+                "purple-cta",
+                "Purple"
+              ],
+              [
+                "orange-cta",
+                "Orange"
+              ],
+              [
+                "manual-cta",
+                "Choose Manual (Hex Colors)"
+              ]
+            ],
+            "multiple": false,
+            "reordering_enabled": true,
+            "preset": null,
+            "type": "choice",
+            "display_width": null,
+            "default": "orange-cta"
+          },
+          {
+            "id": "4d818894-9e18-493d-c1a6-6c619be64c81",
+            "name": "background_color",
+            "label": "Background color",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": null,
+              "controlling_field_path": "cta_settings.button_settings.button_colour",
+              "controlling_value_regex": "manual-cta",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#000000",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "6eb23422-735f-4d0c-281d-02d7c86dabbd",
+            "name": "background_color_hover",
+            "label": "Background color hover",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": null,
+              "controlling_field_path": "cta_settings.button_settings.button_colour",
+              "controlling_value_regex": "manual-cta",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "6142028d-5410-8d8f-9a2a-48be1350384e",
+            "name": "border_color",
+            "label": "Border color",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": null,
+              "controlling_field_path": "cta_settings.button_settings.button_colour",
+              "controlling_value_regex": "manual-cta",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#000000",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "e59ff80b-6885-be41-72eb-58700cd4ef0d",
+            "name": "border_color_hover",
+            "label": "Border color hover",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": null,
+              "controlling_field_path": "cta_settings.button_settings.button_colour",
+              "controlling_value_regex": "manual-cta",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#000000",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "41a225de-5f87-ef75-823b-9d6872264b3e",
+            "name": "button_text_color",
+            "label": "Button text color",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": null,
+              "controlling_field_path": "cta_settings.button_settings.button_colour",
+              "controlling_value_regex": "manual-cta",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "ac87614d-86b3-d7d6-c498-a7ddf7ded862",
+            "name": "button_text_color_hover",
+            "label": "Button text color hover",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": null,
+              "controlling_field_path": "cta_settings.button_settings.button_colour",
+              "controlling_value_regex": "manual-cta",
+              "property": null,
+              "operator": "EQUAL",
+              "access": null
+            },
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#000000",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "6dc49deb-a278-eb52-0e46-402b4309e6ff",
+            "name": "button_text",
+            "label": "Button Text",
+            "required": false,
+            "locked": false,
+            "placeholder": "Join the network for free",
+            "allow_new_line": false,
+            "type": "text",
+            "display_width": null,
+            "default": "Button Text"
+          },
+          {
+            "id": "0033e7c7-6a63-c3f9-c9c7-93794d3fe53c",
+            "name": "button_url",
+            "label": "Button URL",
+            "required": false,
+            "locked": false,
+            "visibility": {
+              "controlling_field": null,
+              "controlling_field_path": "cta_settings.button_settings.trigger_modal",
+              "controlling_value_regex": "true",
+              "property": null,
+              "operator": "NOT_EQUAL",
+              "access": null
+            },
+            "supported_types": [
+              "EXTERNAL",
+              "CONTENT",
+              "FILE",
+              "EMAIL_ADDRESS",
+              "BLOG",
+              "CALL_TO_ACTION",
+              "PHONE_NUMBER",
+              "WHATSAPP_NUMBER"
+            ],
+            "type": "url",
+            "display_width": null,
+            "default": {
+              "content_id": null,
+              "href": "https://www.expertunity.com",
+              "type": "EXTERNAL"
+            }
+          }
+        ],
+        "tab": "CONTENT",
+        "expanded": false,
+        "group_occurrence_meta": null,
+        "type": "group",
+        "display_width": null,
+        "default": {
+          "button_type": "primary-cta",
+          "pulse_effect": false,
+          "trigger_modal": false,
+          "background_color": {
+            "color": "#000000",
+            "opacity": 100
+          },
+          "background_color_hover": {
+            "color": "#FFFFFF",
+            "opacity": 100
+          },
+          "border_color": {
+            "color": "#000000",
+            "opacity": 100
+          },
+          "border_color_hover": {
+            "color": "#000000",
+            "opacity": 100
+          },
+          "button_text_color": {
+            "color": "#FFFFFF",
+            "opacity": 100
+          },
+          "button_text_color_hover": {
+            "color": "#000000",
+            "opacity": 100
+          },
+          "button_text": "Button Text",
+          "button_url": {
+            "content_id": null,
+            "href": "https://www.expertunity.com",
+            "type": "EXTERNAL"
+          }
+        }
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": {
+      "cta_field": "",
+      "button_settings": {
+        "button_type": "primary-cta",
+        "pulse_effect": false,
+        "trigger_modal": false,
+        "background_color": {
+          "color": "#000000",
+          "opacity": 100
+        },
+        "background_color_hover": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        },
+        "border_color": {
+          "color": "#000000",
+          "opacity": 100
+        },
+        "border_color_hover": {
+          "color": "#000000",
+          "opacity": 100
+        },
+        "button_text_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        },
+        "button_text_color_hover": {
+          "color": "#000000",
+          "opacity": 100
+        },
+        "button_text": "Button Text",
+        "button_url": {
+          "content_id": null,
+          "href": "https://www.expertunity.com",
+          "type": "EXTERNAL"
+        }
+      }
+    }
+  },
+  {
+    "id": "434c7994-d0b3-6e38-b3a3-d0d10ceffca2",
+    "name": "style",
+    "label": "Style",
+    "required": false,
+    "locked": true,
+    "children": [
+      {
+        "id": "c8620ec8-4ee9-df93-eb0e-9c8295eb759a",
+        "name": "background_color",
+        "label": "Background Color",
+        "required": false,
+        "locked": false,
+        "show_opacity": true,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#321432",
+          "opacity": 100
+        }
+      },
+      {
+        "name": "background_image",
+        "label": "Background Image",
+        "type": "image",
+        "responsive": true,
+        "resizable": false,
+        "show_loading": false,
+        "default": {
+          "size_type": "auto",
+          "src": "",
+          "alt": "",
+          "loading": "lazy"
+        }
+      },
+      {
+        "name": "background_overlay",
+        "label": "Background Overlay Color",
+        "inline_help_text": "Apply a colored overlay on top of the image to improve text readability.",
+        "type": "color",
+        "show_opacity": true,
+        "default": {
+          "color": "#321432",
+          "opacity": 50
+        }
+      },
+      {
+        "name": "background_size",
+        "label": "Background Size",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "cover",
+            "Cover (Fill entire banner)"
+          ],
+          [
+            "contain",
+            "Contain (Fit within banner)"
+          ],
+          [
+            "auto",
+            "Original Size"
+          ]
+        ],
+        "default": "cover"
+      },
+      {
+        "name": "background_position",
+        "label": "Background Position",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "center center",
+            "Center"
+          ],
+          [
+            "top center",
+            "Top Center"
+          ],
+          [
+            "bottom center",
+            "Bottom Center"
+          ],
+          [
+            "center left",
+            "Center Left"
+          ],
+          [
+            "center right",
+            "Center Right"
+          ]
+        ],
+        "default": "center center"
+      },
+      {
+        "name": "background_repeat",
+        "label": "Background Repeat",
+        "type": "choice",
+        "display": "select",
+        "choices": [
+          [
+            "no-repeat",
+            "Do Not Repeat"
+          ],
+          [
+            "repeat",
+            "Repeat / Tile"
+          ]
+        ],
+        "default": "no-repeat"
+      }
+    ],
+    "tab": "STYLE",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": {
+      "background_color": {
+        "color": "#321432",
+        "opacity": 100
+      }
+    }
+  },
+  {
+    "id": "84bf7fc7-6787-d532-a1c6-0e1763423426",
+    "name": "list_items",
+    "label": "List Items",
+    "required": false,
+    "locked": true,
+    "occurrence": {
+      "min": 1,
+      "max": 4,
+      "sorting_label_field": "bbc9501c-6ec0-945c-e78d-39cb4d7fb3c6",
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "bbc9501c-6ec0-945c-e78d-39cb4d7fb3c6",
+        "name": "title",
+        "label": "Title",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "Secure"
+      },
+      {
+        "id": "ad3bad3a-f4ef-d5c1-7b41-34c187a73788",
+        "name": "icon",
+        "label": "Icon",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": false,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "size_type": "auto",
+          "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/Group%20(1).svg",
+          "alt": "Group (1)",
+          "loading": "lazy",
+          "width": 63,
+          "height": 42,
+          "max_width": 63,
+          "max_height": 42
+        }
+      },
+      {
+        "id": "58a3137c-11ed-78af-f5dc-8c57a6cef37a",
+        "name": "text_color",
+        "label": "Text Color",
+        "required": false,
+        "locked": false,
+        "show_opacity": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "title": "Secure",
+        "icon": {
+          "size_type": "auto",
+          "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/Group%20(1).svg",
+          "alt": "Group (1)",
+          "loading": "lazy",
+          "width": 63,
+          "height": 42,
+          "max_width": 63,
+          "max_height": 42
+        },
+        "text_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "title": "Secure",
+        "icon": {
+          "size_type": "auto",
+          "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/Group%20(1).svg",
+          "alt": "Group (1)",
+          "loading": "lazy",
+          "width": 63,
+          "height": 42,
+          "max_width": 63,
+          "max_height": 42
+        },
+        "text_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "title": "Secure",
+        "icon": {
+          "size_type": "auto",
+          "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/Group%20(1).svg",
+          "alt": "Group (1)",
+          "loading": "lazy",
+          "width": 63,
+          "height": 42,
+          "max_width": 63,
+          "max_height": 42
+        },
+        "text_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "id": "e440b1f6-d0c1-dc38-cd6e-1113c6a37067",
+    "name": "modal",
+    "label": "Modal",
+    "required": false,
+    "locked": true,
+    "visibility": {
+      "controlling_field": null,
+      "controlling_field_path": "cta_settings.button_settings.trigger_modal",
+      "controlling_value_regex": "true",
+      "property": null,
+      "operator": "EQUAL",
+      "access": null
+    },
+    "children": [
+      {
+        "id": "e617ea05-4229-6957-394a-baa884def4a1",
+        "name": "content",
+        "label": "Content",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "display_width": null
+      },
+      {
+        "id": "cb69cf1d-2b22-e8ac-5dfe-1d0e91ac6d11",
+        "name": "form",
+        "label": "Form",
+        "required": false,
+        "locked": false,
+        "embed_versions": [
+          "v4"
+        ],
+        "type": "form",
+        "display_width": null,
+        "default": {
+          "response_type": "inline",
+          "message": "Thanks for submitting the form."
+        }
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": {
+      "form": {
+        "response_type": "inline",
+        "message": "Thanks for submitting the form."
+      }
+    }
+  }
+]

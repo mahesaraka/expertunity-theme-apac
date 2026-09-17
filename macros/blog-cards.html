@@ -1,0 +1,74 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+
+{# Modern Blog cards macro #}
+
+{% macro blogCards(config, class, readtext) %}
+    <article class="modern-blog-card {{ class }}">
+        {# Thumbnail #}
+        <div class="modern-blog-card__media">
+            <a href="{{ config.absolute_url }}" class="modern-blog-card__media-link" aria-label="{{ config.name|escape_attr }}">
+                {% if config.featured_image %}
+                    <img src="{{ resize_image_url(config.featured_image|escape_url, 600) }}" 
+                         alt="{{ config.featured_image_alt_text|default(config.name)|escape_attr }}" 
+                         loading="lazy" 
+                         width="600" 
+                         height="340"
+                         class="modern-blog-card__img">
+                {% else %}
+                    <div class="modern-blog-card__placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#B727F5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                {% endif %}
+            </a>
+            
+            {% if config.topic_list|length > 0 %}
+                <div class="modern-blog-card__badge-wrap">
+                    <span class="modern-blog-card__badge">{{ config.topic_list[0].name }}</span>
+                </div>
+            {% endif %}
+        </div>
+
+        {# Card Body (#FFFFFF) #}
+        <div class="modern-blog-card__body">
+            {% set display_date = config.publish_date ? config.publish_date|datetimeformat('%b %d, %Y') : config.publish_date_localized %}
+            {% if display_date and (":" in display_date) and ("," in display_date) %}
+                {% set date_parts = display_date|split(',') %}
+                {% if date_parts|length >= 2 %}
+                    {% set display_date = date_parts[0] ~ "," ~ date_parts[1] %}
+                {% endif %}
+            {% endif %}
+            {% if display_date %}
+                <div class="modern-blog-card__meta">
+                    <time datetime="{{ config.publish_date ? config.publish_date|datetimeformat('%Y-%m-%d') : display_date }}">{{ display_date }}</time>
+                </div>
+            {% endif %}
+
+            <h3 class="modern-blog-card__title">
+                <a href="{{ config.absolute_url }}" title="{{ config.name|escape_attr }}">
+                    {{ config.name }}
+                </a>
+            </h3>
+
+            <div class="modern-blog-card__description">
+                <p>{{ config.post_list_content|truncatehtml(180, '...', false)|striptags }}</p>
+            </div>
+
+            <div class="modern-blog-card__footer">
+                <a href="{{ config.absolute_url }}" class="modern-blog-card__cta">
+                    <span>{{ readtext or 'Read Article' }}</span>
+                    <svg class="modern-blog-card__cta-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </article>
+{% endmacro %}

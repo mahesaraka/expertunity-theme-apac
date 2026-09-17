@@ -1,0 +1,56 @@
+{
+    "name": "HubexoProductFont",
+    "default": "Regular",
+    "fallback": "Helvetica, sans-serif",
+    "variants": [
+      {
+        "name": "Regular",
+        "files": [
+          {
+            "file": "./regular/HubexoProductFont-Regular.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./regular/HubexoProductFont-Regular.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 400
+        }
+      },
+      {
+        "name": "RegularItalic",
+        "files": [
+          {
+            "file": "./regular-italic/HubexoProductFont-RegularItalic.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./regular-italic/HubexoProductFont-RegularItalic.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 400,
+          "font-style": "italic"
+        }
+      },
+      {
+        "name": "Bold",
+        "files": [
+          {
+            "file": "./bold/HubexoProductFont-Bold.woff",
+            "format": "woff"
+          },
+          {
+            "file": "./bold/HubexoProductFont-Bold.woff2",
+            "format": "woff2"
+          }
+        ],
+        "styles": {
+          "font-weight": 700
+        }
+      }
+    ]
+  }

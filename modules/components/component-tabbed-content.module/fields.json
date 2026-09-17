@@ -1,0 +1,890 @@
+[
+  {
+    "name": "hide_tabs",
+    "label": "Hide Tab Headers (Show Only Cards)",
+    "type": "boolean",
+    "default": false,
+    "inline_help_text": "Sembunyikan deretan tab di bagian atas sehingga hanya menampilkan cards."
+  },
+  {
+    "name": "hide_tab_intro",
+    "label": "Hide Tab Heading & Content",
+    "type": "boolean",
+    "default": false,
+    "inline_help_text": "Sembunyikan teks judul dan konten pengantar tab di atas cards."
+  },
+  {
+    "id": "ad1830a9-8d17-e045-5b22-ce4682b30df3",
+    "name": "tab",
+    "label": "Tab",
+    "required": false,
+    "locked": false,
+    "occurrence": {
+      "min": 1,
+      "max": 2,
+      "sorting_label_field": "05349ee6-6cb2-e74a-1de8-ed265f62c0dc",
+      "default": 2
+    },
+    "children": [
+      {
+        "id": "a4a0283b-5d06-b2e0-5923-a0ac257d9a45",
+        "name": "tab_bg_color",
+        "label": "Tab Background Colour",
+        "required": false,
+        "locked": false,
+        "show_opacity": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#321432",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "b3319e49-197d-10ba-0916-14d19f13c097",
+        "name": "tab_text_color",
+        "label": "Tab Text Colour",
+        "required": false,
+        "locked": false,
+        "show_opacity": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "05349ee6-6cb2-e74a-1de8-ed265f62c0dc",
+        "name": "tab_title",
+        "label": "Tab Title",
+        "required": false,
+        "locked": false,
+        "allow_new_line": false,
+        "type": "text",
+        "display_width": null,
+        "default": "For Buyers"
+      },
+      {
+        "id": "4d2879ee-e8bc-759b-4062-44b171978317",
+        "name": "tab_content",
+        "label": "Tab content",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "display_width": null,
+        "default": "<h2 style=\"color: white;\">How We Solve Your Challenges</h2>"
+      },
+      {
+        "id": "ba226e69-d4e5-42f1-6456-e4121aca1527",
+        "name": "cards",
+        "label": "Cards",
+        "required": false,
+        "locked": false,
+        "occurrence": {
+          "min": 1,
+          "max": 6,
+          "sorting_label_field": "92d6cccd-5b90-35cd-4dd1-ea4fb27f10b4",
+          "default": 6
+        },
+        "children": [
+          {
+            "id": "6b8cff0c-c7f4-683e-5c7d-d0ed860ce249",
+            "name": "icon",
+            "label": "Icon",
+            "required": false,
+            "locked": false,
+            "responsive": true,
+            "resizable": false,
+            "show_loading": false,
+            "type": "image",
+            "display_width": null,
+            "default": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            }
+          },
+          {
+            "id": "92d6cccd-5b90-35cd-4dd1-ea4fb27f10b4",
+            "name": "card_content",
+            "label": "Card content",
+            "required": false,
+            "locked": false,
+            "type": "richtext",
+            "display_width": null,
+            "default": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>"
+          },
+          {
+            "id": "da9c598d-315f-5cec-36c2-70f48c5f47d3",
+            "name": "card_link",
+            "label": "Card link",
+            "required": false,
+            "locked": false,
+            "supported_types": [
+              "EXTERNAL",
+              "CONTENT",
+              "FILE",
+              "EMAIL_ADDRESS",
+              "BLOG",
+              "CALL_TO_ACTION",
+              "PHONE_NUMBER",
+              "WHATSAPP_NUMBER",
+              "PAYMENT"
+            ],
+            "show_advanced_rel_options": false,
+            "type": "link",
+            "display_width": null,
+            "default": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            }
+          },
+          {
+            "id": "2da35439-e618-4d46-208b-9d36174ad05b",
+            "name": "background_colour",
+            "label": "Background Colour",
+            "required": false,
+            "locked": false,
+            "show_opacity": false,
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#462B46",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "778ac16a-e294-bdae-79a4-0197dc5276c1",
+            "name": "background_hover_colour",
+            "label": "Background Hover Colour",
+            "required": false,
+            "locked": false,
+            "show_opacity": false,
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "border_color",
+            "label": "Border Colour",
+            "type": "color",
+            "show_opacity": false,
+            "default": null
+          },
+          {
+            "id": "border_color_hover",
+            "name": "border_color_hover",
+            "label": "Border color hover",
+            "required": false,
+            "locked": false,
+            "show_opacity": false,
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#ffffff",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "text_color",
+            "label": "Text Colour",
+            "type": "color",
+            "show_opacity": false,
+            "default": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "name": "text_color_hover",
+            "label": "Text Hover Colour",
+            "type": "color",
+            "show_opacity": false,
+            "default": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "5d0b6204-4618-4796-a82e-bde6c16fe490",
+            "name": "arrow_color",
+            "label": "Arrow Colour",
+            "required": false,
+            "locked": false,
+            "show_opacity": false,
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "id": "df0b36da-e95e-42f9-8d8d-0b4697e22a82",
+            "name": "arrow_color_hover",
+            "label": "Arrow Hover Colour",
+            "required": false,
+            "locked": false,
+            "show_opacity": false,
+            "type": "color",
+            "display_width": null,
+            "default": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          }
+        ],
+        "tab": "CONTENT",
+        "expanded": false,
+        "group_occurrence_meta": null,
+        "type": "group",
+        "display_width": null,
+        "default": [
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            },
+            "border_color": null,
+            "text_color": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            },
+            "text_color_hover": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            },
+            "border_color": null,
+            "text_color": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            },
+            "text_color_hover": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            },
+            "border_color": null,
+            "text_color": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            },
+            "text_color_hover": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            },
+            "border_color": null,
+            "text_color": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            },
+            "text_color_hover": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            },
+            "border_color": null,
+            "text_color": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            },
+            "text_color_hover": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            },
+            "border_color": null,
+            "text_color": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            },
+            "text_color_hover": {
+              "color": "#FFFFFF",
+              "opacity": 100
+            }
+          }
+        ]
+      }
+    ],
+    "tab": "CONTENT",
+    "expanded": false,
+    "group_occurrence_meta": null,
+    "type": "group",
+    "display_width": null,
+    "default": [
+      {
+        "tab_bg_color": {
+          "color": "#321432",
+          "opacity": 100
+        },
+        "tab_text_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        },
+        "tab_title": "For Buyers",
+        "tab_content": "<h2 style=\"color: white;\">How We Solve Your Challenges</h2>",
+        "cards": [
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          }
+        ]
+      },
+      {
+        "tab_bg_color": {
+          "color": "#321432",
+          "opacity": 100
+        },
+        "tab_text_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        },
+        "tab_title": "For Buyers",
+        "tab_content": "<h2 style=\"color: white;\">How We Solve Your Challenges</h2>",
+        "cards": [
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          },
+          {
+            "icon": {
+              "size_type": "auto",
+              "src": "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/Expertunity%20Theme%20Assets/Icons/default-tabber-icon.svg",
+              "alt": "default-tabber-icon",
+              "loading": "lazy",
+              "width": 53,
+              "height": 46,
+              "max_width": 53,
+              "max_height": 46
+            },
+            "card_content": "<h4 style=\"color: white;\">Find qualified suppliers instantly</h4>\n<p style=\"color: white;\">Smart matching connects you with verified, quality-assured suppliers based on your needs and timeline.</p>",
+            "card_link": {
+              "url": {
+                "content_id": null,
+                "type": "EXTERNAL",
+                "href": ""
+              },
+              "open_in_new_tab": false,
+              "no_follow": false
+            },
+            "background_colour": {
+              "color": "#462B46",
+              "opacity": 100
+            },
+            "background_hover_colour": {
+              "color": "#5B435B",
+              "opacity": 100
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+{# ============================ MODULE SETTINGS ============================ #}
+
+{# ========= BUTTON SETTINGS ========= #}
+
+{% set button_style = module.cta_settings.button_settings.button_type %}
+{% set button_colour = module.cta_settings.button_settings.button_colour %}
+    
+{# ======= END BUTTON SETTINGS ====== #}
+    
+{# ============================== MODULE HTML ============================== #}
+    
+    <div class="module cta">
+        {% if module.cta_settings.cta_type == 'cta' %}
+            {% cta guid="{{ module.cta_settings.cta_field }}" %}
+        {% else %}
+            <a  class="{{button_style}} {{button_colour}}" href="{{ module.cta_settings.button_settings.button_url.href }}">{{ module.cta_settings.button_settings.button_text }}</a>
+        {% endif %}
+    </div>
+    
+{# ============================== MODULE CSS ============================== #}
+    
+    <style>
+        {% scope_css %}
+    
+          .module.cta{
+              {{ module.style.desktop_spacing.spacing_desktop.css }}
+              text-align:{{ module.style.alignment.horizontal_align }};
+
+          }
+
+          @media screen and (max-width: 767px){
+              .module.cta{
+                  {{ module.style.mobile_spacing.spacing_mobile.css }}
+                  {{ module.style.alignment }}
+              }
+          }
+      
+          {% if module.cta_settings.button_settings.button_type == "custom-cta"%}
+            .custom-cta {
+              background-color: {{ module.cta_settings.button_settings.background_color.rgba }};
+              border-color: {{ module.cta_settings.button_settings.border_color.rgba }};
+              color: {{ module.cta_settings.button_settings.button_text_color.rgba }};
+            }
+
+            .custom-cta:hover {
+              background-color: {{ module.cta_settings.button_settings.background_color_hover.rgba }};
+              border-color: {{ module.cta_settings.button_settings.border_color_hover.rgba }};
+              color: {{ module.cta_settings.button_settings.button_text_color_hover.rgba }};
+            }
+          {% endif %}
+ 
+        {% end_scope_css %}
+    </style>

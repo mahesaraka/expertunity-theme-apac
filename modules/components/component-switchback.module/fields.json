@@ -1,0 +1,659 @@
+[ {
+  "id" : "86aab5e9-d009-6504-1878-15d198085db6",
+  "name" : "width",
+  "label" : "Module Width",
+  "help_text" : "if set to full width, please ensure the surrounding hubspot section is set to full width, with left/right padding set to 0",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "placeholder" : "Select module width",
+  "choices" : [ [ "boxed-width", "Boxed Width" ], [ "full-width", "Full Width" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "boxed-width"
+}, {
+  "id" : "087947a8-5972-1c87-0e08-eeb885a0b6f2",
+  "name" : "media_content",
+  "label" : "Media Column",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "f85ec128-c508-86a5-bbc2-2e3be9f57fc2",
+    "name" : "contain_media",
+    "label" : "Contain media",
+    "inline_help_text" : "By toggling this on, you stop the media section from growing with the text size and use its inherit size instead",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "13eebd28-74f0-4b9d-ce17-3b28ffec446b",
+    "name" : "media_alignment",
+    "label" : "Media alignment",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_content.contain_media",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "top", "Top" ], [ "center", "Center" ], [ "bottom", "Bottom" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "8baac987-1ec9-19e7-98a9-4d863670fbf9",
+    "name" : "media_type",
+    "label" : "Media Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "image", "Image" ], [ "video", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "image"
+  }, {
+    "id" : "1af50b3a-5218-3800-6881-df10e9196af6",
+    "name" : "images",
+    "label" : "Images",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 2,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_content.media_type",
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : [ {
+      "size_type" : "auto_custom_max",
+      "src" : "",
+      "alt" : "switchback-placeholder",
+      "loading" : "lazy",
+      "width" : 1200,
+      "height" : 800,
+      "max_width" : 1200,
+      "max_height" : 800
+    } ]
+  }, {
+    "id" : "14f04de5-2004-c381-1df6-895652170eca",
+    "name" : "video_thumbnail",
+    "label" : "Video Thumbnail",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_content.media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "switchback-placeholder",
+      "loading" : "lazy",
+      "width" : 1200,
+      "height" : 800,
+      "max_width" : 1200,
+      "max_height" : 800
+    }
+  }, {
+    "picker" : "video",
+    "id" : "00f70da0-d6dd-a8af-7050-a7f1ce6b1b16",
+    "name" : "video_file",
+    "label" : "Video File",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_content.media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "file",
+    "display_width" : null,
+    "default" : "https://144265894.fs1.hubspotusercontent-eu1.net/hubfs/144265894/placeholder-video.mp4"
+  }, {
+    "id" : "e69206ec-f593-3436-4ce8-eac2497d6aa6",
+    "name" : "autoplay",
+    "label" : "Autoplay?",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_content.media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "6aaa2b57-9c3a-6ba0-dd1e-737803fe367a",
+    "name" : "loop",
+    "label" : "Loop?",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "media_content.media_type",
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "contain_media" : false,
+    "media_alignment" : "center",
+    "media_type" : "image",
+    "images" : [ {
+      "size_type" : "auto_custom_max",
+      "src" : "",
+      "alt" : "switchback-placeholder",
+      "loading" : "lazy",
+      "width" : 1200,
+      "height" : 800,
+      "max_width" : 1200,
+      "max_height" : 800
+    } ],
+    "video_thumbnail" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : "switchback-placeholder",
+      "loading" : "lazy",
+      "width" : 1200,
+      "height" : 800,
+      "max_width" : 1200,
+      "max_height" : 800
+    },
+    "video_file" : "https://144265894.fs1.hubspotusercontent-eu1.net/hubfs/144265894/placeholder-video.mp4",
+    "autoplay" : true,
+    "loop" : true
+  }
+}, {
+  "id" : "fcc823e5-07a5-63c0-e2ce-44da50cab3d0",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b545f364-a1ca-7930-6ac3-5410f26b078a",
+    "name" : "desktop_layout",
+    "label" : "Desktop Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Text Left, Media Right" ], [ "text-right", "Text Right, Media Left" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-left"
+  }, {
+    "id" : "3a433818-604c-f24e-7eef-f8f0be5e1517",
+    "name" : "mobile_layout",
+    "label" : "Mobile Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-bottom", "Media Top, Text Bottom" ], [ "text-top", "Media Bottom, Text Top" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-bottom"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "desktop_layout" : "text-left",
+    "mobile_layout" : "text-bottom"
+  }
+}, {
+  "id" : "047be4fd-49c8-b295-392c-043814cb113e",
+  "name" : "text_content",
+  "label" : "Text Column",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "27181103-92d2-dedb-b11c-c4e39b93371c",
+    "name" : "content",
+    "label" : "Content",
+    "inline_help_text" : "Can't see the text? Click \"Turn on dark editor\" underneath the WYSIWYG editor.",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h2>Why Expertunity?</h2>\n<p class=\"big-text\">Built for better business in construction</p>\n<p>Expertunity is the construction industry's digital marketplace - locally rooted, globally connected. We match serious buyers with verified, quality-assured suppliers at the right time, reducing risk and saving time. Everything comes together in one seamless workflow, from first contact to final agreement.</p>\n<p>Less admin, more control. With validated data, AI-powered insights, and real world workflows, Expertunity helps you make better decisions, work faster, and build trustworthy partnerships.</p>"
+  }, {
+    "id" : "53608c68-22fb-cd04-9a56-df57a4980983",
+    "name" : "add_cta",
+    "label" : "Add CTA?",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "4f61e99a-f447-a47f-ecee-287bfa05513c",
+    "name" : "cta_settings",
+    "label" : "CTA Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "text_content.add_cta",
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "cdd98c72-6c6e-03b1-2a9c-d3b00a8fa3a3",
+      "name" : "cta_type",
+      "label" : "CTA Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Button or CTA?",
+      "choices" : [ [ "button", "Button" ], [ "cta", "Hubspot CTA" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "button"
+    }, {
+      "id" : "0fecf7da-eaaf-d757-8903-a794c8e8daae",
+      "name" : "cta_field",
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "text_content.cta_settings.cta_type",
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null,
+      "default" : "c001910d-01a9-4b88-8cba-e793bfc52632"
+    }, {
+      "id" : "8a73a6ec-0562-314b-0b96-5105578d0da3",
+      "name" : "button_settings",
+      "label" : "Button Settings",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "text_content.cta_settings.cta_type",
+        "controlling_value_regex" : "button",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "children" : [ {
+        "id" : "f360231a-bec6-734b-ea33-4da46c0239b1",
+        "name" : "button_type",
+        "label" : "Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "placeholder" : "Please choose a button style",
+        "choices" : [ [ "primary-cta", "Primary (Filled)" ], [ "secondary-cta", "Secondary (Hollow)" ], [ "custom-cta", "Custom" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "primary-cta"
+      }, {
+        "id" : "bc1af4c0-f2e9-2896-e05c-3ce23edd19f4",
+        "name" : "button_colour",
+        "label" : "Button Colour",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "placeholder" : "Please Choose A Button Colour",
+        "choices" : [ [ "purple-cta", "Purple" ], [ "orange-cta", "Orange" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : "purple-cta"
+      }, {
+        "id" : "bc77ff2d-aa49-acd0-a96a-73f93d481548",
+        "name" : "background_color",
+        "label" : "Background color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "text_content.cta_settings.button_settings.button_type",
+          "controlling_value_regex" : "custom-cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#000000",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "a7cc26dc-5f22-4502-3a2d-d0888526e7db",
+        "name" : "background_color_hover",
+        "label" : "Background color hover",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "text_content.cta_settings.button_settings.button_type",
+          "controlling_value_regex" : "custom-cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "e3eaa54f-7785-0a2c-5c2b-8166f377dc6d",
+        "name" : "border_color",
+        "label" : "Border color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "text_content.cta_settings.button_settings.button_type",
+          "controlling_value_regex" : "custom-cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#000000",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "8766871d-d681-b957-c65e-2bee42f917b9",
+        "name" : "border_color_hover",
+        "label" : "Border color hover",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "text_content.cta_settings.button_settings.button_type",
+          "controlling_value_regex" : "custom-cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#000000",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "3d63b9a6-f0ca-6570-fefd-7b7723b6bab2",
+        "name" : "button_text_color",
+        "label" : "Button text color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "text_content.cta_settings.button_settings.button_type",
+          "controlling_value_regex" : "custom-cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "7ccb2f10-2286-829c-fa46-e4396dbf9e52",
+        "name" : "button_text_color_hover",
+        "label" : "Button text color hover",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : null,
+          "controlling_field_path" : "text_content.cta_settings.button_settings.button_type",
+          "controlling_value_regex" : "custom-cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "type" : "color",
+        "display_width" : null,
+        "default" : {
+          "color" : "#000000",
+          "opacity" : 100
+        }
+      }, {
+        "id" : "6dc49deb-a278-eb52-0e46-402b4309e6ff",
+        "name" : "button_text",
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "placeholder" : "Learn More",
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Button Text"
+      }, {
+        "id" : "0033e7c7-6a63-c3f9-c9c7-93794d3fe53c",
+        "name" : "button_url",
+        "label" : "Button URL",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "CALL_TO_ACTION", "BLOG" ],
+        "type" : "url",
+        "display_width" : null,
+        "default" : {
+          "content_id" : null,
+          "href" : "https://www.expertunity.com",
+          "type" : "EXTERNAL"
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "button_type" : "primary-cta",
+        "button_colour" : "purple-cta",
+        "background_color" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "background_color_hover" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "border_color_hover" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "button_text_color" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        },
+        "button_text_color_hover" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "button_text" : "Button Text",
+        "button_url" : {
+          "content_id" : null,
+          "href" : "https://www.expertunity.com",
+          "type" : "EXTERNAL"
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "cta_type" : "button",
+      "cta_field" : "c001910d-01a9-4b88-8cba-e793bfc52632",
+      "button_settings" : {
+        "button_type" : "primary-cta",
+        "button_colour" : "purple-cta",
+        "background_color" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "background_color_hover" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "border_color_hover" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "button_text_color" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        },
+        "button_text_color_hover" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "button_text" : "Button Text",
+        "button_url" : {
+          "content_id" : null,
+          "href" : "https://www.expertunity.com",
+          "type" : "EXTERNAL"
+        }
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "content" : "<h2>Why Expertunity?</h2>\n<p class=\"big-text\">Built for better business in construction</p>\n<p>Expertunity is the construction industry's digital marketplace - locally rooted, globally connected. We match serious buyers with verified, quality-assured suppliers at the right time, reducing risk and saving time. Everything comes together in one seamless workflow, from first contact to final agreement.</p>\n<p>Less admin, more control. With validated data, AI-powered insights, and real world workflows, Expertunity helps you make better decisions, work faster, and build trustworthy partnerships.</p>",
+    "add_cta" : true,
+    "cta_settings" : {
+      "cta_type" : "button",
+      "cta_field" : "c001910d-01a9-4b88-8cba-e793bfc52632",
+      "button_settings" : {
+        "button_type" : "primary-cta",
+        "button_colour" : "purple-cta",
+        "background_color" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "background_color_hover" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        },
+        "border_color" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "border_color_hover" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "button_text_color" : {
+          "color" : "#FFFFFF",
+          "opacity" : 100
+        },
+        "button_text_color_hover" : {
+          "color" : "#000000",
+          "opacity" : 100
+        },
+        "button_text" : "Button Text",
+        "button_url" : {
+          "content_id" : null,
+          "href" : "https://www.expertunity.com",
+          "type" : "EXTERNAL"
+        }
+      }
+    }
+  }
+} ]

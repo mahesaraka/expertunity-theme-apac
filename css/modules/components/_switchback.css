@@ -1,0 +1,341 @@
+/* Looking for .video-media?  You can find this in css/elements/_video.css */
+
+.switchback {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 80px;
+    overflow-y: clip;
+}
+
+.switchback.switchback--reverse {
+    flex-direction: row-reverse;
+}
+
+.switchback-column {
+    width: 50%;
+}
+
+.switchback-gradient {
+    display: none;
+}
+
+/* If full width */
+
+.switchback.switchback--full-width {
+    padding-top: 80px;
+}
+
+.switchback.switchback--full-width .switchback-gradient {
+    display: block;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 15%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+}
+
+.switchback.switchback--full-width .video-media {
+    box-shadow: 24px 0px 54px rgba(0, 57, 52, 0.08), -24px 0px 54px rgba(0, 57, 52, 0.08);
+}
+
+.switchback.switchback--full-width .video-media video {
+    object-position: top left;
+}
+
+.switchback.switchback--reverse.switchback.switchback--full-width .switchback-gradient {
+    left: unset;
+    right: 50%;
+}
+
+.switchback.switchback--full-width {
+    position: relative;
+    max-width: 1550px;
+    margin: 0 auto;
+}
+
+.switchback.switchback--full-width .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 120px;
+    padding: 0px;
+    width: 100%;
+}
+
+.switchback.switchback--reverse.switchback.switchback--full-width .content-wrapper {
+    flex-direction: row-reverse;
+}
+
+.switchback.switchback--dual-image .switchback-column.switchback-column--media {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 24px;
+}
+
+.switchback.switchback--dual-image .switchback-column.switchback-column--media img {
+    max-width: 50%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    min-height: 545px;
+}
+
+.switchback.switchback--dual-image .switchback-column.switchback-column--content {
+    padding: 0px;
+    width: 45%;
+}
+
+.switchback.switchback--dual-image .switchback-column.switchback-column--media {
+    width: 55%;
+}
+
+/* If Full width -> Handle Media */
+
+.switchback.switchback--full-width .switchback-column.switchback-column--media {
+    min-height: 450px;
+}
+
+.switchback.switchback--full-width .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+.switchback.switchback--full-width .switchback-column.switchback-column--media .video-media {
+    position: absolute;
+    top: 50%;
+    transform: translate(60px, -50%);
+    left: 50%;
+    max-width: 60%;
+    object-fit: cover;
+    object-position: top left;
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    max-height: 500px;
+
+}
+
+.switchback.switchback--reverse.switchback--full-width .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+.switchback.switchback--reverse.switchback--full-width .switchback-column.switchback-column--media .video-media {
+    left: unset;
+    right: 50%;
+    transform: translate(-60px, -50%);
+    object-position: top left;
+}
+
+
+.switchback.switchback--full-width .switchback-column.switchback-column--content {
+    padding: 80px 0px;
+}
+
+@media screen and (max-width: 1440px) {
+    .switchback.switchback--full-width .content-wrapper {
+        padding: 100px 20px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    .switchback.switchback--full-width .content-wrapper {
+        gap: 64px;
+        padding: 64px 20px;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--content {
+        padding: 40px 0px;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+    .switchback.switchback--full-width .switchback-column.switchback-column--media .video-media {
+        transform: translate(32px, -50%);
+        height: 100%;
+    }
+
+    .switchback.switchback--reverse.switchback--full-width .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+    .switchback.switchback--reverse.switchback--full-width .switchback-column.switchback-column--media .video-media {
+        transform: translate(-32px, -50%);
+    }
+
+    .switchback.switchback--dual-image .switchback-column.switchback-column--content {
+        width: 100%;
+    }
+
+    .switchback.switchback--dual-image .switchback-column.switchback-column--media {
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .switchback.switchback--full-width {
+        padding-top: 40px;
+    }
+
+    .switchback.switchback--full-width .switchback-gradient {
+        display: none;
+    }
+
+    .switchback.switchback--full-width .content-wrapper {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0px;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--media {
+        padding-left: 20px;
+        min-height: unset;
+        position: relative;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--media::after {
+        content: "";
+        z-index: 5;
+        position: absolute;
+        bottom: -20%;
+        left: 20px;
+        height: 70%;
+        width: 100%;
+        z-index: 5;
+        background: linear-gradient(0deg, rgba(255, 255, 255, 1) 15%, rgba(0, 0, 0, 0) 100%);
+        pointer-events: none;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--content {
+        padding: 0px 20px;
+        position: relative;
+        z-index: 6;
+    }
+
+    .switchback.switchback--full-width.switchback--media-top .content-wrapper {
+        flex-direction: column-reverse !important;
+    }
+
+    .switchback.switchback--full-width.switchback--media-top .switchback-gradient {
+        top: 0px;
+        bottom: unset;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--media img,
+    .switchback.switchback--full-width .switchback-column.switchback-column--media .video-media {
+        border-radius: 8px 0px 0px 8px;
+        min-height: unset;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+    .switchback.switchback--full-width .switchback-column.switchback-column--media .video-media,
+    .switchback.switchback--full-width.switchback--reverse .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+    .switchback.switchback--full-width.switchback--reverse .switchback-column.switchback-column--media .video-media {
+        position: static;
+        top: unset;
+        transform: unset;
+        left: unset;
+        height: 100%;
+        max-width: unset;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+    .switchback.switchback--full-width.switchback--reverse .switchback-column.switchback-column--media img:not(.video-media__thumbnail) {
+        position: static;
+    }
+
+    .switchback.switchback--full-width .switchback-column.switchback-column--media .video-media {
+        position: relative;
+    }
+
+    .switchback.switchback--reverse.switchback--full-width .switchback-column.switchback-column--media img:not(.video-media__thumbnail),
+    .switchback.switchback--reverse.switchback--full-width .switchback-column.switchback-column--media .video-media {
+        transform: unset;
+    }
+
+    .switchback.switchback--dual-image .switchback-column.switchback-column--media img {
+        max-height: 300px;
+        min-height: 300px !important;
+    }
+
+}
+
+/* Content */
+
+.switchback-column.switchback-column--content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.switchback-column.switchback-column--content p:last-of-type {
+    margin-bottom: 0px;
+}
+
+.switchback-column__cta-wrapper {
+    margin-top: 32px;
+}
+
+/* Content -> List Items */
+
+.switchback-column__list-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.switchback ul li h5 {
+    margin-bottom: 12px;
+}
+
+.switchback ul li p:last-of-type {
+    margin-bottom: 0px;
+}
+
+/* Media */
+
+.switchback-column.switchback-column--media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 740px;
+    border-radius: var(--radius);
+}
+
+.switchback-column.switchback-column--media img {
+    border-radius: var(--radius);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media screen and (max-width: 1023px) {
+
+    .switchback {
+        gap: 44px;
+        flex-direction: column !important;
+    }
+
+    .switchback--media-top {
+        flex-direction: column-reverse !important;
+    }
+
+    .switchback-column.switchback-column--content h2 {
+        margin-bottom: 32px;
+    }
+
+    .switchback-column {
+        width: 100%;
+    }
+
+    .switchback-column.switchback-column--content {
+        padding: 0px;
+    }
+
+    .switchback-column.switchback-column--media {
+        min-height: unset;
+    }
+
+    .switchback-column__cta-wrapper {
+        margin-top: 30px;
+    }
+
+}

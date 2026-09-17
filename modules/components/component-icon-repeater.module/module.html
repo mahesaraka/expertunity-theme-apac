@@ -1,0 +1,31 @@
+<div class="icon-image-repeater">
+    <div class="icon-image-repeater__items">
+        {% for repeater_item in module.repeater_items %}
+            <div class="icon-image-repeater__items__item" data-aos="fade-up" data-aos-offset="{{ loop.index * 200 }}" data-aos-duration="1000" data-index="{{ loop.index }}">
+                <img src="{{ repeater_item.image.src }}" alt="{{ repeater.image.alt }}" class='{% if module.image_type == "icon"%}repeater-icon{% else %}repeater-image{% endif %}'>
+                {{ repeater_item.content }}
+            </div>
+        {% endfor %}
+    </div>     
+</div>
+
+{% require_js %}
+<script>
+    function updateAOSOffset() {
+        const aosElements = document.querySelectorAll('.icon-image-repeater__items__item');
+        aosElements.forEach(function(el) {
+            const index = Number(el.dataset.index) || 1;
+            
+            if (window.innerWidth <= 768) {
+                el.setAttribute('data-aos-offset', index * 50);
+            } else {
+                el.setAttribute('data-aos-offset', index * 200);
+            }
+        });
+        AOS.refresh();
+    }
+
+    document.addEventListener('DOMContentLoaded', updateAOSOffset);
+    window.addEventListener('resize', updateAOSOffset);
+</script>
+{% end_require_js %}

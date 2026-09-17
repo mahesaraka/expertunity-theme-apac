@@ -1,0 +1,12 @@
+{# ============================ MODULE SETTINGS ============================ #}
+
+{% from "expertunity-theme-apac-au-nz/macros/logo_slider.html" import logo_slider %}
+
+{# ============================ MODULE HTML ============================ #}
+
+<section class="client-logo-slider {{ 'client-logo-slider--no-max-height' if module.disable_logo_max_height }} {{ 'client-logo-slider--full' if module.style.remove_fade }} {{ 'client-logo-slider--grey' if module.style.enable_greyscale }}">
+    <div class="content-wrapper">
+        {{ module.content }}
+    </div>
+    {{ logo_slider("client-logos","clientLogos", module.logos, module.slider_settings.no_delay, module.slider_settings.autoplay, module.slider_settings.speed, module.theme, module.style.background_color.color)}}
+</section>

@@ -1,0 +1,100 @@
+[ {
+  "id" : "be9689ad-e006-0bdc-cbda-98a13730b0c9",
+  "name" : "image_type",
+  "label" : "Image Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "image", "Image" ], [ "icon", "Icon" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "image"
+}, {
+  "id" : "7dd81461-d829-f2b8-bb7e-0a81578f3c12",
+  "name" : "repeater_items",
+  "label" : "Repeater Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "0ad376ce-0916-1369-81ac-6737a31ed495",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "76dd5abc-07f8-cdb8-9f6d-2b3734bb0f4a",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/SE%20Files/SE_budgetarbete_daniel-eliason.jpg",
+      "alt" : "SE_budgetarbete_daniel-eliason",
+      "loading" : "lazy",
+      "width" : 960,
+      "height" : 540,
+      "max_width" : 960,
+      "max_height" : 540
+    }
+  }, {
+    "id" : "0ad376ce-0916-1369-81ac-6737a31ed495",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h3>Digital Marketplace</h3>\n<p>Find qualified suppliers fast, simplify procurement from start to finish, make data-driven decisions.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/SE%20Files/SE_budgetarbete_daniel-eliason.jpg",
+      "alt" : "SE_budgetarbete_daniel-eliason",
+      "loading" : "lazy",
+      "width" : 960,
+      "height" : 540,
+      "max_width" : 960,
+      "max_height" : 540
+    },
+    "content" : "<h3>Digital Marketplace</h3>\n<p>Find qualified suppliers fast, simplify procurement from start to finish, make data-driven decisions.</p>"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/SE%20Files/SE_budgetarbete_daniel-eliason.jpg",
+      "alt" : "SE_budgetarbete_daniel-eliason",
+      "loading" : "lazy",
+      "width" : 960,
+      "height" : 540,
+      "max_width" : 960,
+      "max_height" : 540
+    },
+    "content" : "<h3>Digital Marketplace</h3>\n<p>Find qualified suppliers fast, simplify procurement from start to finish, make data-driven decisions.</p>"
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://4993418.fs1.hubspotusercontent-eu1.net/hubfs/4993418/SE%20Files/SE_budgetarbete_daniel-eliason.jpg",
+      "alt" : "SE_budgetarbete_daniel-eliason",
+      "loading" : "lazy",
+      "width" : 960,
+      "height" : 540,
+      "max_width" : 960,
+      "max_height" : 540
+    },
+    "content" : "<h3>Digital Marketplace</h3>\n<p>Find qualified suppliers fast, simplify procurement from start to finish, make data-driven decisions.</p>"
+  } ]
+} ]

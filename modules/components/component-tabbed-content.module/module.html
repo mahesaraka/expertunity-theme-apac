@@ -1,0 +1,209 @@
+{# ========================= MODULE HTML ========================= #}
+
+<section id="section-tabbed-content--{{ name }}" class="section-tabbed-content section-tabbed-content--{{ name }}">
+	{% if !module.hide_tabs %}
+	<div class="section-tabbed-content__tabs">
+		{% for tab in module.tab %}
+			<div data-index="{{ loop.index }}" class="section-tabbed-content__tab" style="background-color: {{ tab.tab_bg_color.color }};">
+				<span style="color: {{ tab.tab_text_color.color }};">{{ tab.tab_title }}</span>
+			</div>
+		{% endfor %}
+	</div>
+	{% endif %}
+	<div class="section-tabbed-content__tabs-wrapper">
+	{% for tab in module.tab %}
+		{% set tab_index = loop.index %}
+		<div data-index="{{ loop.index }}" class="section-tabbed-content__tab__content section-tabbed-content__tab__content--{{ tab_index }} {% if loop.first %}active{% endif %}" style="background-color: {{ tab.tab_bg_color.color }};">
+			{% if !module.hide_tab_intro and tab.tab_content %}
+			<div class="section-tabbed-content__tab__content__content">
+				{{ tab.tab_content }}
+			</div>
+			{% endif %}
+			<div class="section-tabbed-content__cards">
+				{% for card in tab.cards %}
+					{% set card_index = loop.index %}
+					<style>
+						#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}{
+							background-color: {{ card.background_colour.color || '#462B46' }};
+							{% if card.border_color.color and card.border_color.color != 'transparent' %}
+								border: 2px solid {{ card.border_color.color }};
+							{% else %}
+								border: 2px solid transparent;
+							{% endif %}
+							transition: var(--transition);
+						}
+
+						#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover{
+							{% if card.background_hover_colour.color %}
+								background-color: {{ card.background_hover_colour.color }};
+							{% endif %}
+							{% if card.border_color_hover.color and card.border_color_hover.color != 'transparent' %}
+								border-color: {{ card.border_color_hover.color }} !important;
+							{% endif %}
+						}
+
+						{% if card.text_color.color %}
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }},
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} h1,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} h2,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} h3,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} h4,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} h5,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} h6,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} p,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} span,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} a {
+								color: {{ card.text_color.color }} !important;
+							}
+						{% endif %}
+
+						{% if card.arrow_color.color %}
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} .section-tabbed-content__cards__card__icon svg path {
+								fill: {{ card.arrow_color.color }} !important;
+							}
+						{% elif card.text_color.color %}
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }} .section-tabbed-content__cards__card__icon svg path {
+								fill: {{ card.text_color.color }} !important;
+							}
+						{% endif %}
+
+						{% if card.text_color_hover.color %}
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover h1,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover h2,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover h3,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover h4,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover h5,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover h6,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover p,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover span,
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover a {
+								color: {{ card.text_color_hover.color }} !important;
+							}
+						{% endif %}
+
+						{% if card.arrow_color_hover.color %}
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover .section-tabbed-content__cards__card__icon svg path {
+								fill: {{ card.arrow_color_hover.color }} !important;
+							}
+						{% elif card.text_color_hover.color %}
+							#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content.section-tabbed-content__tab__content--{{ tab_index }} .section-tabbed-content__cards__card.section-tabbed-content__cards__card--{{ card_index }}:hover .section-tabbed-content__cards__card__icon svg path {
+								fill: {{ card.text_color_hover.color }} !important;
+							}
+						{% endif %}
+					</style>
+					<div class="section-tabbed-content__cards__card section-tabbed-content__cards__card--{{ card_index }}" data-aos="fade-up" data-aos-offset="{{loop.index * 80}}" data-aos-duration="500">
+						<div class="section-tabbed-content__cards__card__icon">
+							<svg xmlns="http://www.w3.org/2000/svg" width="43" height="38" viewBox="0 0 43 38" fill="none">
+								<path d="M41.6999 20.3999L25.7999 36.3C24.7999 37.3 23.0999 37.3 22.1999 36.3C21.1999 35.3 21.1999 33.6 22.1999 32.7L33.5999 21.2H2.9999C1.5999 21.2 0.399902 20.1001 0.399902 18.6001C0.399902 17.1001 1.4999 16 2.9999 16H33.5999L22.1999 4.6001C21.1999 3.6001 21.1999 1.9 22.1999 1C23.1999 0 24.8999 0 25.7999 1L41.6999 16.8999C42.6999 17.8999 42.6999 19.6 41.6999 20.5V20.3999Z" fill="{{ card.arrow_color.color || card.text_color.color || tab.tab_text_color.color || '#FFFFFF' }}"/>
+							</svg>
+							{% if card.icon.src %}
+								{% set loadingAttr = card.icon.loading != 'disabled' ? 'loading="{{ card.icon.loading|escape_attr }}"' : '' %}
+								<img src="{{ card.icon.src|escape_url }}" alt="{{ card.icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+							{% endif %}
+						</div>
+						{{ card.card_content }}
+						{% if card.card_link.url.href %}
+						{% set href = card.card_link.url.href %}
+						{% if card.card_link.url.type is equalto "EMAIL_ADDRESS" %}
+						{% set href = "mailto:" + href %}
+						{% elif card.card_link.url.type is equalto "PHONE_NUMBER" %}
+						{% set href = "tel:" + href %}
+						{% endif %}
+						<a
+						class="cover-link"
+						{% if card.card_link.url.type is equalto "CALL_TO_ACTION"  %}
+							href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+						{% else %}
+							href="{{ href|escape_url }}"
+						{% endif %}
+						{% if card.card_link.open_in_new_tab %}
+							target="_blank"
+						{% endif %}
+						{% if card.card_link.rel %}
+							rel="{{ card.card_link.rel|escape_attr }}"
+						{% endif %}
+						>
+						</a>
+						{% endif %}
+					</div>
+
+				{% endfor %}
+			</div>
+		</div>
+	{% endfor %}
+	</div>
+</section>
+
+{# ========================= MODULE CSS ========================= #}
+
+<style>
+	#section-tabbed-content--{{ name }} .section-tabbed-content__tab{
+		position: relative;
+		isolation: isolate;
+	}
+	{% if module.tab|length > 0 and module.tab[0].tab_bg_color.color %}
+	#section-tabbed-content--{{ name }} .section-tabbed-content__tab:first-of-type:before{
+		content: "";
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		bottom: 0px;
+		right: -40px;
+		background-color: {{ module.tab[0].tab_bg_color.color }};
+	}
+	{% endif %}
+	{% if module.tab|length > 1 and module.tab[1].tab_bg_color.color %}
+	#section-tabbed-content--{{ name }} .section-tabbed-content__tab:last-of-type:before{
+		content: "";
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		bottom: -40px;
+		right: 0px;
+		z-index: -1;
+		background-color: {{ module.tab[1].tab_bg_color.color }};
+	}
+	{% endif %}
+
+	#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content:last-of-type.active{
+		border-top-left-radius: var(--radius);
+	}
+
+	{% if module.hide_tabs %}
+	#section-tabbed-content--{{ name }} .section-tabbed-content__tabs {
+		display: none !important;
+	}
+	#section-tabbed-content--{{ name }} .section-tabbed-content__tab__content {
+		border-top-left-radius: var(--radius) !important;
+		border-top-right-radius: var(--radius) !important;
+	}
+	{% endif %}
+</style>
+
+{# ========================= MODULE JS ========================= #}
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const container = document.getElementById("section-tabbed-content--{{ name }}");
+		if (!container) return;
+
+		const tabs = container.querySelectorAll(".section-tabbed-content__tab");
+		const contents = container.querySelectorAll(".section-tabbed-content__tab__content");
+
+		tabs.forEach(tab => {
+			tab.addEventListener("click", function () {
+				const index = this.getAttribute("data-index");
+
+				// Remove active class from tabs and contents within this module instance only
+				tabs.forEach(t => t.classList.remove("active"));
+				contents.forEach(c => c.classList.remove("active"));
+
+				// Add active class to clicked tab and corresponding content
+				this.classList.add("active");
+				const targetContent = container.querySelector(`.section-tabbed-content__tab__content[data-index="${index}"]`);
+				if (targetContent) targetContent.classList.add("active");
+			});
+		});
+	});
+</script>

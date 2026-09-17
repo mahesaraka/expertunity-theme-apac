@@ -1,0 +1,99 @@
+.blog-wrapper,
+.blog-modules-wrapper {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.blog-modules-wrapper:empty,
+.blog-modules-wrapper:has(#hs_cos_wrapper_related_posts:empty) {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.blog-wrapper section,
+.blog-modules-wrapper #hs_cos_wrapper_related_posts section {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.blog-wrapper {
+    background-color: #eeeeee;
+    padding-top: 20px;
+}
+
+.blog-modules-wrapper {
+    background: linear-gradient(180deg,rgba(222, 228, 228, 1) 0%, rgba(238, 238, 238, 1) 100%);
+}
+
+.blog-modules-wrapper .blog-cards .wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 120px;
+    padding-bottom: 160px;
+}
+
+
+/* Hero section */
+
+.blog-post-hero .content-wrapper .content {
+    max-width: 670px;
+}
+
+/* Author section */
+
+.blog-post-author .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    max-width: 1140px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #321432;
+}
+
+/* Content section */
+
+.blog-post-content .wrapper {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 150px;
+}
+
+.blog-post-content .wrapper .hs_cos_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-post-content .wrapper img {
+    border-radius: 20px;
+    display: block;
+}
+
+.blog-post-content .wrapper h1,
+.blog-post-content .wrapper h2,
+.blog-post-content .wrapper h3,
+.blog-post-content .wrapper h4,
+.blog-post-content .wrapper h5,
+.blog-post-content .wrapper h6,
+.blog-post-content .wrapper p,
+.blog-post-content .wrapper span,
+.blog-post-content .wrapper blockquote,
+.blog-post-content .wrapper a,
+.blog-post-content .wrapper ul,
+.blog-post-content .wrapper ol {
+    max-width: 1140px;
+    width: 100%;
+}
+
+.blog-post-content .wrapper p:has(img),
+.blog-post-content .wrapper span:has(img),
+.blog-post-content .wrapper blockquote:has(img),
+.blog-post-content .wrapper a:has(img) {
+    max-width: 1140px;
+}

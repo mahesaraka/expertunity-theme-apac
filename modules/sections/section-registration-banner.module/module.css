@@ -1,0 +1,152 @@
+.registration-banner{
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 120px 0px 90px 0px;
+    position: relative;
+    overflow: hidden;
+}
+
+.registration-banner__content{
+    text-align: center;
+}
+
+.registration-banner__content p:last-of-type{
+    margin-bottom: 0px;
+}
+
+.registration-banner__content-ctas{
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.registration-banner__icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 64px;
+}
+
+.registration-banner__icon-list-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.registration-banner__icon-list-item p{
+    margin-bottom: 0px;
+}
+
+.registration-banner__icon-list-item img{
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Modal */
+
+.registration-banner__modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0);
+    z-index: 9999999999;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.registration-banner__modal.registration-banner__modal--show{
+        background-color:rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        pointer-events: all;
+}
+
+.registration-banner__modal-content{
+    max-width: 800px;
+    width: 100%;
+    padding: 100px 80px;
+    border-radius: var(--radius);
+    background-color: var(--white);
+}
+
+.registration-banner__modal-content .hsfc-Step__Content{
+    padding: 0px!important;
+}
+
+.registration-banner__modal-content .hsfc-Button{
+    font-size: 20px!important;
+    font-weight: 600!important;
+    line-height: 0.9!important;
+    padding: 16px 32px!important;
+    border: 2px solid transparent!important;
+    border-radius: 50px!important;
+    transition: var(--transition)!important;
+    text-decoration: none!important;
+    display: inline-block!important;
+    text-align: center!important;
+    cursor: pointer!important;
+    font-family: Bauziet, Helvetica, sans-serif;
+    font-weight: 500!important;
+    background-color: var(--orange)!important;
+    border-color: var(--orange)!important;
+}
+
+.registration-banner__modal-content .hsfc-Button:hover{
+    background-color: transparent!important;
+    color: var(--orange)!important;
+}
+
+.registration-banner__modal-content .hsfc-TextInput{
+    padding: 32px 20px!important;
+    border-radius: 10px!important;
+    background-color: white!important;
+    color: var(--purple)!important;
+    border: 0px solid transparent!important;
+}
+
+.registration-banner__modal-content .hsfc-TextInput::placeholder{
+    opacity: 0.5!important;
+    color: var(--purple)!important;
+}
+
+@media screen and (max-width: 767px){
+    .registration-banner{
+        gap: 64px;
+        padding: 60px 0px 45px 0px;
+    }
+
+    .registration-banner__content-ctas{
+        margin-top: 40px;
+    }
+
+    .registration-banner__icons{
+        padding: 0px 16px;
+        gap: 32px;
+    }
+
+    .registration-banner__modal-content{
+        padding: 64px 40px;
+    }
+
+    .registration-banner__modal-content .hsfc-TextInput{
+        padding: 16px 10px!important;
+        border-radius: 5px!important;
+    }
+}

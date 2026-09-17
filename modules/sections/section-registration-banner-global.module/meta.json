@@ -1,0 +1,15 @@
+{
+  "global": true,
+  "content_types": [
+    "LANDING_PAGE",
+    "SITE_PAGE",
+    "BLOG_POST"
+  ],
+  "smart_type": "NOT_SMART",
+  "host_template_types": [
+    "ANY"
+  ],
+  "module_id": 467623554276,
+  "label": "[S] Registration Banner Global",
+  "is_available_for_new_content": true
+}

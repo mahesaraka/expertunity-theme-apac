@@ -1,0 +1,403 @@
+[ {
+  "id" : "996bc8e3-7643-6dec-82ec-b0515430d842",
+  "name" : "style",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7ebbaddc-308e-f582-bd8b-8706b78237d9",
+    "name" : "alignment",
+    "label" : "Alignment",
+    "required" : false,
+    "locked" : false,
+    "alignment_direction" : "BOTH",
+    "type" : "alignment",
+    "display_width" : null,
+    "default" : {
+      "horizontal_align" : "LEFT",
+      "vertical_align" : "MIDDLE"
+    }
+  }, {
+    "id" : "817c0f43-f7af-e905-d775-5cacca6d021f",
+    "name" : "desktop_spacing",
+    "label" : "Desktop Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "8c50e2fc-bde0-1dc9-87fb-b86dc83a889e",
+      "name" : "spacing_desktop",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_desktop" : { }
+    }
+  }, {
+    "id" : "8d2a7ac6-0c39-a640-463b-9348e129421e",
+    "name" : "mobile_spacing",
+    "label" : "Mobile Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "dda7c02c-5545-8450-fb56-e5e9c299129f",
+      "name" : "spacing_mobile",
+      "label" : "Spacing",
+      "required" : false,
+      "locked" : false,
+      "type" : "spacing",
+      "display_width" : null,
+      "default" : { }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "spacing_mobile" : { }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "alignment" : {
+      "horizontal_align" : "LEFT",
+      "vertical_align" : "MIDDLE"
+    },
+    "desktop_spacing" : {
+      "spacing_desktop" : { }
+    },
+    "mobile_spacing" : {
+      "spacing_mobile" : { }
+    }
+  }
+}, {
+  "id" : "4f61e99a-f447-a47f-ecee-287bfa05513c",
+  "name" : "cta_settings",
+  "label" : "CTA Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "cdd98c72-6c6e-03b1-2a9c-d3b00a8fa3a3",
+    "name" : "cta_type",
+    "label" : "CTA Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "placeholder" : "Button or CTA?",
+    "choices" : [ [ "button", "Button" ], [ "cta", "Hubspot CTA" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "0fecf7da-eaaf-d757-8903-a794c8e8daae",
+    "name" : "cta_field",
+    "label" : "CTA",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cta_settings.cta_type",
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "cta",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "8a73a6ec-0562-314b-0b96-5105578d0da3",
+    "name" : "button_settings",
+    "label" : "Button Settings",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "cta_settings.cta_type",
+      "controlling_value_regex" : "button",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "f360231a-bec6-734b-ea33-4da46c0239b1",
+      "name" : "button_type",
+      "label" : "Button Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "placeholder" : "Please choose a button style",
+      "choices" : [ [ "primary-cta", "Primary (Filled)" ], [ "secondary-cta", "Secondary (Hollow)" ], [ "custom-cta", "Custom" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "primary-cta"
+    }, {
+      "id" : "bc1af4c0-f2e9-2896-e05c-3ce23edd19f4",
+      "name" : "button_colour",
+      "label" : "Button Colour",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "cta_settings.button_settings.button_type",
+        "controlling_value_regex" : "custom-cta",
+        "property" : null,
+        "operator" : "NOT_EQUAL",
+        "access" : null
+      },
+      "display" : "select",
+      "placeholder" : "Please Choose A Button Colour",
+      "choices" : [ [ "purple-cta", "Purple" ], [ "orange-cta", "Orange" ], [ "accent-one-cta", "Accent 1" ], [ "accent-two-cta", "Accent 2" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "purple-cta"
+    }, {
+      "id" : "193da1dc-5c32-810f-ee89-6f1186acb518",
+      "name" : "background_color",
+      "label" : "background color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "cta_settings.button_settings.button_type",
+        "controlling_value_regex" : "custom-cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#000000",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "27159260-c2e6-7a80-af58-720e88efe998",
+      "name" : "background_color_hover",
+      "label" : "background color hover",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "cta_settings.button_settings.button_type",
+        "controlling_value_regex" : "custom-cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "6385521f-c7f8-6fb8-4800-1448e938333d",
+      "name" : "border_color",
+      "label" : "border color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "cta_settings.button_settings.button_type",
+        "controlling_value_regex" : "custom-cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#000000",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "b76e085f-c426-829d-3293-b2a73f2f5c41",
+      "name" : "border_color_hover",
+      "label" : "border color hover",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "cta_settings.button_settings.button_type",
+        "controlling_value_regex" : "custom-cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#000000",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "218dcd7d-7e72-3b2e-599c-3d99978e5219",
+      "name" : "button_text_color",
+      "label" : "button text color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "cta_settings.button_settings.button_type",
+        "controlling_value_regex" : "custom-cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "20ed7775-2488-8a0a-dbd4-9965d032cde6",
+      "name" : "button_text_color_hover",
+      "label" : "button text color hover",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : null,
+        "controlling_field_path" : "cta_settings.button_settings.button_type",
+        "controlling_value_regex" : "custom-cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : "#000000",
+        "opacity" : 100
+      }
+    }, {
+      "id" : "6dc49deb-a278-eb52-0e46-402b4309e6ff",
+      "name" : "button_text",
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "placeholder" : "Button Text",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Button Text"
+    }, {
+      "id" : "0033e7c7-6a63-c3f9-c9c7-93794d3fe53c",
+      "name" : "button_url",
+      "label" : "Button URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "content_id" : null,
+        "href" : "https://www.expertunity.com",
+        "type" : "EXTERNAL"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "button_type" : "primary-cta",
+      "button_colour" : "purple-cta",
+      "background_color" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "background_color_hover" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "border_color" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "border_color_hover" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "button_text_color" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "button_text_color_hover" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "button_text" : "Button Text",
+      "button_url" : {
+        "content_id" : null,
+        "href" : "https://www.expertunity.com",
+        "type" : "EXTERNAL"
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "cta_field" : "",
+    "button_settings" : {
+      "button_type" : "primary-cta",
+      "button_colour" : "purple-cta",
+      "background_color" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "background_color_hover" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "border_color" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "border_color_hover" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "button_text_color" : {
+        "color" : "#FFFFFF",
+        "opacity" : 100
+      },
+      "button_text_color_hover" : {
+        "color" : "#000000",
+        "opacity" : 100
+      },
+      "button_text" : "Button Text",
+      "button_url" : {
+        "content_id" : null,
+        "href" : "https://www.expertunity.com",
+        "type" : "EXTERNAL"
+      }
+    }
+  }
+} ]

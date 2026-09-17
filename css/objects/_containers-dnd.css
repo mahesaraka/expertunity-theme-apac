@@ -1,0 +1,35 @@
+{% if theme.spacing.maximum_content_width == "compact" %}
+  {% set container_width = "900px" %}
+{% elif theme.spacing.maximum_content_width == "default" %}
+  {% set container_width = "1000px" %}
+{% elif theme.spacing.maximum_content_width == "comfortable" %}
+  {% set container_width = "1200px" %}
+{% elif theme.spacing.maximum_content_width == "custom" %}
+  {% set container_width = theme.spacing.custom_maximum_content_width ~ "px" %}
+{% endif %}
+
+{% set container_max_width = container_width + 64 %}
+
+/* Content wrappers for blog post and system templates */
+
+.content-wrapper {
+  padding: 0 32px;
+  margin: 0 auto;
+}
+
+.content-wrapper-full{
+    max-width: {{container_max_width ~ "px"}};
+    margin: 0 auto;
+}
+
+/* Drag and drop layout styles */
+
+.dnd-section > .row-fluid {
+  margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+  .dnd-section .dnd-column {
+    padding: 0;
+  }
+}

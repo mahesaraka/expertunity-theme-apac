@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "inline_help_text" : "<strong>Module Description</strong><br>\nThis module allows you to add text content paired with up to 2 images or one video and choose your desired layout for both desktop and mobile.<br>\n<em style=\"font-size:12px\">See style tab for layout options</em>\n",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 467623554272,
+  "label" : "[C] Switchback",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,41 @@
+<!--
+  templateType: search_results_page
+  isAvailableForNewContent: true
+  label: Blueprint - search results
+-->
+{% set template_css = '../../css/templates/system.css' %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+    <div class="system-header-wrapper">
+        <h1>Search the site</h1>
+        <div class="content-wrapper">
+            {% module "search_input" path="@hubspot/search_input" %}
+        </div>
+    </div>
+
+{% if request.query_dict.term %}
+ 
+  <section class="content-wrapper">
+    <div class="systems-page systems-page--search-results">
+
+      {# Search results heading #}
+
+      {% module 'content'
+        path='@hubspot/rich_text',
+        html='<h2>Results for "{{ request.query_dict.term|escape }}"</h2>'
+      %}
+
+      {# Search results #}
+
+      {% module 'search_results'
+        path='@hubspot/search_results'
+      %}
+
+
+    </div>
+  </section>
+
+{% endif %} 
+
+{% endblock body %}

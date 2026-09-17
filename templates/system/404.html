@@ -1,0 +1,144 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: Blueprint - 404 error
+-->
+{% set template_css = "../../css/templates/system.css" %}
+{% extends "../layouts/base.html" %}
+
+{% block body %}
+<section class="error-page-wrapper">
+  <div class="content-wrapper error-page" data-error="404">
+
+    {# Content #}
+
+    <div class="error-page__header-content">
+
+      {% module "content"
+        path="@hubspot/rich_text",
+        html="<h1 style='color: #fff;'>404 Error</h1>
+              <p style='color: #fff;'>Sorry, that looks like an old link</p>
+              <p style='color: #fff;'>This is a 404 error. It means something was wrong with the link we gave you or the page you’re looking 
+              for has been unpublished.</p>"
+      %}
+
+    </div>
+
+  </div> 
+</section>
+
+<section class="error-page__column-links-wrapper">
+
+  <div class="content-wrapper error-page__column-links">
+    {% module "content"
+      path="/blueprint-sandbox/modules/card-repeater",
+      card_item=[
+        {
+          "card_title" : "Bespoke Modules",
+          "text" : "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
+          "image_icon" : {
+            "size_type" : "auto",
+            "src" : "https://9163974.fs1.hubspotusercontent-na1.net/hubfs/9163974/placeholder-square.svg",
+            "alt" : "placeholder-square",
+            "loading" : "lazy",
+            "width" : 390,
+            "height" : 516,
+            "max_width" : 390,
+            "max_height" : 516
+          },
+          "button_text" : "View modules",
+          "button" : [
+            [
+              {
+                "url" : {
+                  "content_id" : null,
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            ]
+          ]
+        },
+        {
+          "card_title" : "Bespoke Modules",
+          "text" : "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
+          "image_icon" : {
+            "size_type" : "auto",
+            "src" : "https://9163974.fs1.hubspotusercontent-na1.net/hubfs/9163974/placeholder-square.svg",
+            "alt" : "placeholder-square",
+            "loading" : "lazy",
+            "width" : 390,
+            "height" : 516,
+            "max_width" : 390,
+            "max_height" : 516
+          },
+          "button_text" : "View modules",
+          "button" : [
+            [
+              {
+                "url" : {
+                  "content_id" : null,
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            ]
+          ]
+        },
+        {
+          "card_title" : "Bespoke Modules",
+          "text" : "<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>",
+          "image_icon" : {
+            "size_type" : "auto",
+            "src" : "https://9163974.fs1.hubspotusercontent-na1.net/hubfs/9163974/placeholder-square.svg",
+            "alt" : "placeholder-square",
+            "loading" : "lazy",
+            "width" : 390,
+            "height" : 516,
+            "max_width" : 390,
+            "max_height" : 516
+          },
+          "button_text" : "View modules",
+          "button" : [
+            [
+              {
+                "url" : {
+                  "content_id" : null,
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            ]
+          ]
+        }
+      ]
+    %}
+  </div>
+
+</section>
+
+<section class="error-page__cta-banner-wrapper">
+  <div class="content-wrapper">
+    <div class="error-page__cta-banner">
+      <div class="error-page__cta-banner__column">
+        {% module "cta_banner_column_1"
+          path="@hubspot/rich_text",
+          html="<h3 style='color: #fff;'>Not sure what you’re looking for?</h3>"
+        %}
+      </div>
+      <div class="error-page__cta-banner__column">
+        {% module "cta_banner_column_2"
+          path="@hubspot/rich_text",
+          html="<p style='color: #fff;'>Contact a member of our team to be upsold on a sweet new website, developed by our Hubspot CMS experts.</p>
+          <p><a class='button button-hollow button-white'>Contact Us</a></p>
+          "
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+
+{% endblock body %}

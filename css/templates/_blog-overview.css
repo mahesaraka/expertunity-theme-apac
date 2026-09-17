@@ -1,0 +1,96 @@
+.hs-blog-listing .dnd-section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.hs-blog-listing .dnd-section:has(.registration-banner) {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+}
+
+@media (max-width: 767px) {
+    .hs-blog-listing .dnd-section:has(.registration-banner) {
+        padding-top: 45px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+.hs-blog-listing .row-fluid:has(.registration-banner) {
+    max-width: none !important;
+}
+
+/* title */
+
+.blog-title {
+    margin-bottom: 85px;
+}
+
+
+/* overview */
+
+.blog-cards__body.grid {
+    gap: 24px;
+}
+
+/* pagination */
+
+.pagination {
+    margin-top: 85px;
+}
+
+.pagination .wrapper {
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination ul {
+    display: flex;
+    gap: 10px;
+    flex-flow: row wrap;
+    border-radius: 30px;
+    padding: 4px;
+    margin: 0;
+    background-color: #B0B7B7;
+}
+
+.pagination li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.pagination .wrapper ul li a,
+.pagination .wrapper ul li a:not(.primary-cta):not(.secondary-cta):not(.text-cta),
+.pagination .wrapper ul li button {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 52px;
+    height: 52px;
+    padding-top: 3px;
+
+    text-decoration: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: white;
+}
+
+.pagination li .active,
+.pagination .wrapper ul li a:not(.primary-cta):not(.secondary-cta):not(.text-cta).pagination--active,
+.pagination li a.pagination--active  {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #321432;
+}
+
+.pagination li a:hover,
+.pagination .wrapper ul li a:not(.primary-cta):not(.secondary-cta):not(.text-cta):hover,
+.pagination li button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #321432;
+}
+
+.blog-pagination__link.blog-pagination__arrow-link.disabled {
+    display: none;
+}

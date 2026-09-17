@@ -1,0 +1,38 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+
+{# link macro #}
+
+{% macro linkWrapper(config, class, ariaLabel) %}
+    {% set href = config.link.url.href %}
+    {% if config.link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+    {% elif config.link.url.type is equalto "PHONE_NUMBER" %}
+        {% set href = "tel:" + href %}
+    {% endif %}
+
+    <a
+    {% if config.link.url.type is equalto "CALL_TO_ACTION"  %}
+        href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+    {% else %}
+        href="{{ href|escape_url }}"
+    {% endif %}
+    {% if config.link.open_in_new_tab %}
+        target="_blank"
+    {% endif %}
+    {% if config.link.rel %}
+        rel="{{ config.link.rel|escape_attr }}"
+    {% endif %}
+    class="{{ class }}"aria-label="{{ ariaLabel }}"
+    >   
+        {{ caller() }}
+    </a>
+{% endmacro %}
+
+{# linkWrapper macro - sample syntax
+    {% call link_macro.linkWrapper(link, "", link_name) %}
+        {{ link.link_text }}
+    {% endcall %}
+#}

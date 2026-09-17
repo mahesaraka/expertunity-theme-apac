@@ -1,0 +1,20 @@
+.blog-post-hero {
+    position: relative;
+}
+
+.blog-post-hero-image {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-post-hero .wrapper {
+    position: relative;
+    z-index: 4;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 200px 0px;
+}

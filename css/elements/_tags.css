@@ -1,0 +1,39 @@
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 45px;
+}
+
+a:not(.primary-cta):not(.secondary-cta):not(.text-cta).tag,
+.tag {
+    cursor: pointer;
+    display: inline-flex;
+    text-align: center;
+    transition: var(--transition);
+    white-space: normal;
+    text-decoration: none;
+
+    border: 2px solid var(--purple);
+    border-radius: 30px;
+    background-color: transparent;
+    padding: 8px 30px;
+    padding-top: 11px;
+    font-size: 18px;
+}
+
+@media only screen and (min-width: 768px) {
+    a:not(.primary-cta):not(.secondary-cta):not(.text-cta).tag,
+    .tag {
+        font-size: 18px;
+    }
+}
+
+a:not(.primary-cta):not(.secondary-cta):not(.text-cta).tag:hover,
+a:not(.primary-cta):not(.secondary-cta):not(.text-cta).tag.active {
+    text-decoration: none;
+    border: 2px solid var(--purple);
+    background-color: var(--purple);
+    color: var(--white);
+}

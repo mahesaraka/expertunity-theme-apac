@@ -1,0 +1,22 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{# JS responsible for running this macro's click events can be found under js/macros/video.js #}
+
+{% macro video(video_src, thumbnail, autoplay, loop)%}
+
+<script src="{{ get_asset_url('/expertunity-theme-apac-au-nz/js/macros/video.js') }}"></script>
+
+    <div class="video-media {% if (!autoplay) %}video-media--paused{% endif %}" data-aos="fade-up" data-aos-duration="1000">
+        <img src="{{ thumbnail.src }}" alt="{{ thumbnail.alt }}" class="video-media__thumbnail">
+        <div class="video-media__controls">
+            <svg xmlns="http://www.w3.org/2000/svg" width="83" height="83" viewBox="0 0 83 83" fill="none" class="video-controls__play-icon">
+                <circle cx="41.5" cy="41.5" r="41.5" fill="white"/>
+                <path d="M35.7676 28.7875V53.438C35.7676 53.958 36.2753 54.283 36.6816 54.023L55.4688 41.6977C55.8672 41.4377 55.8672 40.7959 55.4688 40.5359L36.6816 28.2106C36.2753 27.9425 35.7676 28.2675 35.7676 28.7875Z" fill="#008D7F"/>
+            </svg>                    
+        </div>          
+        <video {% if (!autoplay) and (!loop) %}controls{% endif %} preload="auto" playsinline src="{{ video_src }}" {% if autoplay %}autoplay muted{% endif %} {% if loop %}loop{% endif %}></video>
+    </div>
+{% endmacro %}
+
