@@ -1,201 +1,130 @@
 {% require_css %}
-<style>
-  {
-    % scope_css %
-  }
+  <style>
+    {% scope_css %}
+      {% if module.overlay_style != "default" %}
+        {% if module.overlay_style == "custom" %}
+          .scalable-banner__media:before {
+            background-color: {{ module.overlay_color.rgba }};
+          }
+        {% elif module.overlay_style == "none" %}
+          .scalable-banner__media:before {
+            content: none;
+            display: none;
+          }
+        {% endif %}
+      {% endif %}
+      {% for cta in module.ctas %}
+        {% if cta.cta_settings.button_settings.button_type == "custom-cta" %}
+          .custom-cta.custom-cta--{{ loop.index }} {
+            background-color: {{ cta.cta_settings.button_settings.background_color.rgba }};
+            border-color: {{ cta.cta_settings.button_settings.border_color.rgba }};
+            color: {{ cta.cta_settings.button_settings.button_text_color.rgba }};
+          }
 
-    {
-    % if module.overlay_style !="default" %
-  }
-
-    {
-    % if module.overlay_style=="custom" %
-  }
-
-  .scalable-banner__media:before {
-    background-color: {
-        {
-        module.overlay_color.rgba
-      }
+          .custom-cta.custom-cta--{{ loop.index }}:hover {
+            background-color: {{ cta.cta_settings.button_settings.background_color_hover.rgba }};
+            border-color: {{ cta.cta_settings.button_settings.border_color_hover.rgba }};
+            color: {{ cta.cta_settings.button_settings.button_text_color_hover.rgba }};
+          }
+        {% endif %}
+      {% endfor %}
+    {% end_scope_css %}
+    .scalable-banner {
+      padding: 200px 0px 160px 0 !important;
     }
-
-    ;
-  }
-
-    {
-    % elif module.overlay_style=="none" %
-  }
-
-  .scalable-banner__media:before {
-    content: none;
-    display: none;
-  }
-
-    {
-    % endif %
-  }
-
-    {
-    % endif %
-  }
-
-    {
-    % for cta in module.ctas %
-  }
-
-    {
-    % if cta.cta_settings.button_settings.button_type=="custom-cta" %
-  }
-
-  .custom-cta.custom-cta-- {
-      {
-      loop.index
+    .scalable-banner__media.scalable-banner__media--scaled {
+      border-radius: 0px 0px 20px 20px !important;
+      transform: none !important;
     }
-  }
-
-    {
-    background-color: {
-        {
-        cta.cta_settings.button_settings.background_color.rgba
-      }
+    .content.scalable-banner__media--scaled {
+      transform: none !important;
     }
-
-    ;
-
-    border-color: {
-        {
-        cta.cta_settings.button_settings.border_color.rgba
-      }
-    }
-
-    ;
-
-    color: {
-        {
-        cta.cta_settings.button_settings.button_text_color.rgba
-      }
-    }
-
-    ;
-  }
-
-  .custom-cta.custom-cta-- {
-      {
-      loop.index
-    }
-  }
-
-  :hover {
-    background-color: {
-        {
-        cta.cta_settings.button_settings.background_color_hover.rgba
-      }
-    }
-
-    ;
-
-    border-color: {
-        {
-        cta.cta_settings.button_settings.border_color_hover.rgba
-      }
-    }
-
-    ;
-
-    color: {
-        {
-        cta.cta_settings.button_settings.button_text_color_hover.rgba
-      }
-    }
-
-    ;
-  }
-
-    {
-    % endif %
-  }
-
-    {
-    % endfor %
-  }
-
-    {
-    % end_scope_css%
-  }
-</style>
+  </style>
 {% end_require_css %}
 
 <section class="scalable-banner">
   <div class="scalable-banner__media">
     {% if module.media_type == "video" %}
-    <video src="{{ module.video_file }}" class="scalable-banner__media-video" playsinline autoplay muted loop></video>
+      <video src="{{ module.video_file }}" class="scalable-banner__media-video" playsinline autoplay muted loop></video>
     {% else %}
-    <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" class="scalable-banner__media-image">
+      <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" class="scalable-banner__media-image">
     {% endif %}
   </div>
   <div class="content-wrapper" data-aos="fade" data-aos-duration="1200">
     <div class="content {{ 'content--centered' if module.center_content }}">
       {{ module.content }}
       {% if module.add_ctas %}
-      <div class="scalabale-banner__ctas">
-        {% for cta in module.ctas %}
-        {% set button_style = cta.cta_settings.button_settings.button_type %}
-        {% set button_colour = cta.cta_settings.button_settings.button_colour %}
-        {% if cta.cta_settings.cta_type == 'cta' %}
-        {% cta guid="{{ cta.cta_settings.cta_field }}" %}
-        {% else %}
-        {% set btn_href = cta.cta_settings.button_settings.button_url.href %}
-        {% if btn_href %}
-        {% set btn_href = btn_href|replace('?hsLang=en#', '#')|replace('?hsLang=en', '')|replace('&hsLang=en', '') %}
-        {% if "#" in btn_href and (btn_href|first != "#") %}
-        {% set hash_part = "#" ~ btn_href|split('#')|last %}
-        {% set base_url = btn_href|split('#')|first|split('?')|first %}
-        {% if base_url == request.path or base_url == content.absolute_url or ("//" ~ request.domain ~ request.path) in
-        base_url %}
-        {% set btn_href = hash_part %}
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        <a class="{{button_style}} {{button_colour}} {% if cta.cta_settings.button_settings.button_type == " custom-cta"
-          %}custom-cta--{{ loop.index}}{% endif %}" href="{{ btn_href }}">{{
-          cta.cta_settings.button_settings.button_text }}</a>
-        {% endif %}
-        {% endfor %}
-      </div>
+        <div class="scalabale-banner__ctas">
+          {% for cta in module.ctas %}
+            {% set button_style = cta.cta_settings.button_settings.button_type %}
+            {% set button_colour = cta.cta_settings.button_settings.button_colour %}
+            {% if cta.cta_settings.cta_type == 'cta' %}
+              {% cta guid="{{ cta.cta_settings.cta_field }}" %}
+            {% else %}
+              {% set btn_href = cta.cta_settings.button_settings.button_url.href %}
+              {% if btn_href %}
+                {% set btn_href = btn_href|replace('?hsLang=en#', '#')|replace('?hsLang=en', '')|replace('&hsLang=en', '') %}
+                {% if "#" in btn_href and (btn_href|first != "#") %}
+                  {% set hash_part = "#" ~ btn_href|split('#')|last %}
+                  {% set base_url = btn_href|split('#')|first|split('?')|first %}
+                  {% if base_url == request.path or base_url == content.absolute_url or ("//" ~ request.domain ~ request.path) in base_url %}
+                    {% set btn_href = hash_part %}
+                  {% endif %}
+                {% endif %}
+              {% endif %}
+              <a class="{{button_style}} {{button_colour}} {% if cta.cta_settings.button_settings.button_type == 'custom-cta' %}custom-cta--{{ loop.index}}{% endif %}" href="{{ btn_href }}">{{ cta.cta_settings.button_settings.button_text }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
       {% endif %}
     </div>
+    {% if module.placement_image.src %}
+      <div class="scalable-banner__placement-image {{ 'scalable-banner__placement-image--centered' if module.center_content }}">
+        <img src="{{ module.placement_image.src }}" alt="{{ module.placement_image.alt }}" class="scalable-banner__placement-image-img" loading="{{ module.placement_image.loading|default('lazy') }}" {% if module.placement_image.width %}width="{{ module.placement_image.width }}"{% endif %} {% if module.placement_image.height %}height="{{ module.placement_image.height }}"{% endif %}>
+      </div>
+    {% endif %}
   </div>
 </section>
 
 {# ============================== MODULE CSS ============================== #}
 
 {% require_css %}
-<style>
-  {
-    % scope_css %
-  }
-
-  .content {
-    max-width: {
-        {
-        module.content_width
+  <style>
+    {% scope_css %}
+      .content {
+        max-width: {{ module.content_width }}px;
       }
-    }
 
-    px;
-  }
+      .content--centered {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
 
-  .content--centered {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
+      .scalable-banner__placement-image {
+        max-width: {{ module.content_width }}px;
+        width: 100%;
+        margin-top: 48px;
+        position: relative;
+        z-index: 3;
+      }
 
-    {
-    % end_scope_css %
-  }
-</style>
+      .scalable-banner__placement-image--centered {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+      }
+
+      .scalable-banner__placement-image-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+    {% end_scope_css %}
+  </style>
 {% end_require_css %}

@@ -1,11 +1,11 @@
-.scalable-banner{
+.scalable-banner {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 160px 0px;
+    padding: 200px 0px 160px 0;
     position: relative;
 }
 
@@ -17,7 +17,7 @@
     z-index: 3;
 }
 
-.scalable-banner__media{
+.scalable-banner__media {
     position: absolute;
     top: 0;
     left: 0;
@@ -30,17 +30,18 @@
 }
 
 .scalable-banner__media.scalable-banner__media--scaled {
-    transform: scale(0.95);
-    border-radius: var(--radius);
+    border-radius: 0px 0px 20px 20px !important;
+    transform: none !important;
 }
 
-@media screen and (max-width: 560px) { 
+@media screen and (max-width: 560px) {
     .scalable-banner__media.scalable-banner__media--scaled {
-        transform: scale(0.9195);
+        border-radius: 0px 0px 20px 20px !important;
+        transform: none !important;
     }
 }
 
-.scalable-banner__media::before{
+.scalable-banner__media::before {
     content: "";
     position: absolute;
     top: 0;
@@ -52,32 +53,33 @@
     height: 100%;
 }
 
-.scalable-banner__media img, 
-.scalable-banner__media video{
+.scalable-banner__media img,
+.scalable-banner__media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.scalabale-banner__ctas{
+.scalabale-banner__ctas {
     display: flex;
     flex-direction: row;
     gap: 32px;
     margin-top: 70px;
 }
 
-@media screen and (max-width: 1680px){
-    .scalable-banner .content-wrapper{
+@media screen and (max-width: 1680px) {
+    .scalable-banner .content-wrapper {
         padding: 0px 32px;
     }
 }
 
 @media screen and (max-width: 767px) {
-    .scalable-banner{
+    .scalable-banner {
         padding: 80px 0px;
     }
-    .scalabale-banner__ctas{
+
+    .scalabale-banner__ctas {
         display: flex;
         flex-direction: column;
         gap: 24px;
@@ -89,8 +91,26 @@
     transition: 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 1640px) { 
-    .content.scalable-banner__media--scaled {
-        transform: scale(0.9);
+@media screen and (max-width: 1640px) {
+    .content.scalable-banner__media--scaled {}
+}
+
+.scalable-banner__placement-image {
+    width: 100%;
+    margin-top: 48px;
+    position: relative;
+    z-index: 3;
+    transition: 0.3s ease-in-out;
+}
+
+.scalable-banner__placement-image-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 767px) {
+    .scalable-banner__placement-image {
+        margin-top: 32px;
     }
 }

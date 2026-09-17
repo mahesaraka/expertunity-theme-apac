@@ -159,7 +159,11 @@ ul li:not(nav ul li)::before {
 }
 
 .hs-tools-menu li::before,
-.hs-private.hs-private.hs-private li::before {
+.hs-private.hs-private.hs-private li::before,
+.sidebar-navigation li::before,
+.header-utility-menu li::before,
+.sidebar-item::before,
+.header-utility-menu__item::before {
   content: none;
   display: none;
 }
