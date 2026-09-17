@@ -275,18 +275,14 @@ h6, .h6 {
 /* ==========================================================================
    Global Theme Styles: Header
    ========================================================================== */
-{% if theme.header.background_color.color %}
-header.header-wrapper {
-  background-color: rgba({{ theme.header.background_color.color|convert_rgb }}, {{ (theme.header.background_color.opacity|default(100)) / 100 }}) !important;
-}
-{% endif %}
-
-{% if theme.header.scrolled_background_color.color %}
+header.header-wrapper,
 header.header-wrapper.scrolled,
 header.header-wrapper.position-fixed.scrolled {
-  background-color: rgba({{ theme.header.scrolled_background_color.color|convert_rgb }}, {{ (theme.header.scrolled_background_color.opacity|default(100)) / 100 }}) !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 12px 20px 0 20px !important;
 }
-{% endif %}
 
 {% if theme.header.text_color.color %}
 header.header-wrapper .content-wrapper .header-column.navigation nav ul.nav-ul li a,
@@ -302,12 +298,33 @@ header.header-wrapper .content-wrapper .header-column.navigation nav ul.nav-ul l
 }
 {% endif %}
 
-{% if theme.header.padding_vertical %}
-header.header-wrapper .content-wrapper {
-  padding-top: {{ theme.header.padding_vertical }}px !important;
-  padding-bottom: {{ theme.header.padding_vertical }}px !important;
+header.header-wrapper .content-wrapper,
+header.header-wrapper.scrolled .content-wrapper,
+header.header-wrapper.position-fixed.scrolled .content-wrapper {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
 }
-{% endif %}
+
+.row-fluid [class*="span"] {
+  min-height: 0px !important;
+}
+
+.scalable-banner {
+  padding: 200px 0px 160px 0 !important;
+}
+
+.scalable-banner__media.scalable-banner__media--scaled {
+  border-radius: 0px 0px 20px 20px !important;
+  transform: none !important;
+}
+
+.content.scalable-banner__media--scaled {
+  transform: none !important;
+}
+
+#main-content {
+  padding-top: 0 !important;
+}
 
 /* ==========================================================================
    Global Theme Styles: Footer
