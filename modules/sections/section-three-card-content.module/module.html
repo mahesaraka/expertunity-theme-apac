@@ -1,0 +1,249 @@
+{# ============================== THREE CARD CONTENT MODULE ============================== #}
+{% set section_id = "section-three-card--" ~ name %}
+{% set spacing = module.spacing %}
+{% set styles = module.card_styles %}
+{% set max_width = spacing.container_width|default(1200) %}
+
+{# Filter valid cards #}
+{% set valid_cards = [] %}
+{% for c in module.cards %}
+  {% if c is defined and c is not none %}
+    {% set text_stripped = c.content|striptags|trim %}
+    {% if text_stripped|length > 0 or c.image.src %}
+      {% do valid_cards.append(c) %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+{% set total_cards = valid_cards|length %}
+
+{% require_css %}
+<style>
+  #{{ section_id }} {
+    position: relative;
+    z-index: 10;
+    margin-top: {{ spacing.margin_top|default(-50) }}px;
+    margin-bottom: {{ spacing.margin_bottom|default(60) }}px;
+    padding-top: {{ spacing.padding_top|default(0) }}px;
+    padding-bottom: {{ spacing.padding_bottom|default(0) }}px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #{{ section_id }} .three-card-container {
+    max-width: {{ max_width }}px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #{{ section_id }} .three-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    align-items: stretch;
+  }
+
+  {% if total_cards == 1 %}
+    #{{ section_id }} .three-card-grid {
+      grid-template-columns: minmax(0, 520px);
+      justify-content: center;
+    }
+  {% elif total_cards == 2 %}
+    #{{ section_id }} .three-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  {% endif %}
+
+  #{{ section_id }} .three-card-item {
+    border-radius: {{ styles.border_radius|default(16) }}px;
+    padding: {{ styles.card_padding|default(32) }}px;
+    background-color: {{ styles.default_bg_color.color|default('#FFFFFF') }};
+    border: 1px solid {{ styles.border_color.color|default('#E5E7EB') }};
+    {% if styles.enable_shadow %}
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    {% endif %}
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    min-height: {{ styles.card_min_height|default(280) }}px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #{{ section_id }} .three-card-item:hover {
+    background-color: {{ styles.hover_bg_color.color|default('#F1DEF9') }};
+    {% if styles.hover_border_color.color %}
+      border-color: {{ styles.hover_border_color.color }};
+    {% endif %}
+    transform: translateY(-6px);
+    {% if styles.enable_shadow %}
+      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+    {% endif %}
+  }
+
+  {% for card in valid_cards %}
+    {% if card.override_colors %}
+      #{{ section_id }} .three-card-item--{{ loop.index }} {
+        background-color: {{ card.custom_bg_color.color|default('#FFFFFF') }};
+      }
+      #{{ section_id }} .three-card-item--{{ loop.index }}:hover {
+        background-color: {{ card.custom_hover_bg_color.color|default('#F1DEF9') }};
+      }
+    {% endif %}
+  {% endfor %}
+
+  #{{ section_id }} .three-card-image-wrap {
+    margin-top: 0;
+    margin-bottom: 24px;
+    width: 100%;
+    min-height: {{ styles.image_min_height|default(80) }}px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: {{ (styles.border_radius|default(16) - 4)|abs }}px;
+    overflow: hidden;
+  }
+
+  #{{ section_id }} .three-card-image-wrap img {
+    height: 30px;
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  #{{ section_id }} .three-card-item:hover .three-card-image-wrap img {
+    transform: scale(1.03);
+  }
+
+  #{{ section_id }} .three-card-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #{{ section_id }} .three-card-content > *:first-child,
+  #{{ section_id }} .three-card-content h1:first-child,
+  #{{ section_id }} .three-card-content h2:first-child,
+  #{{ section_id }} .three-card-content h3:first-child,
+  #{{ section_id }} .three-card-content h4:first-child,
+  #{{ section_id }} .three-card-content h5:first-child,
+  #{{ section_id }} .three-card-content h6:first-child,
+  #{{ section_id }} .three-card-content p:first-child {
+    margin-top: 0 !important;
+  }
+
+  #{{ section_id }} .three-card-content h1,
+  #{{ section_id }} .three-card-content h2,
+  #{{ section_id }} .three-card-content h3,
+  #{{ section_id }} .three-card-content h4,
+  #{{ section_id }} .three-card-content h5,
+  #{{ section_id }} .three-card-content h6 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: inherit;
+  }
+
+  #{{ section_id }} .three-card-content p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    color: inherit;
+    line-height: 1.6;
+  }
+
+  #{{ section_id }} .three-card-content > *:last-child,
+  #{{ section_id }} .three-card-content p:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Responsive: Tablet (768px - 1024px) */
+  @media screen and (max-width: 1024px) and (min-width: 768px) {
+    #{{ section_id }} .three-card-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    #{{ section_id }} .three-card-item {
+      padding: 24px;
+    }
+  }
+
+  /* Responsive: Mobile (<= 767px) */
+  @media screen and (max-width: 767px) {
+    #{{ section_id }} {
+      margin-top: {{ spacing.margin_top_mobile|default(-30) }}px;
+      margin-bottom: {{ spacing.margin_bottom_mobile|default(40) }}px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    #{{ section_id }} .three-card-container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    #{{ section_id }} .three-card-grid {
+      grid-template-columns: 1fr !important;
+      gap: 20px;
+    }
+    #{{ section_id }} .three-card-item {
+      padding: 24px;
+      min-height: {{ styles.card_min_height|default(260) }}px;
+    }
+    #{{ section_id }} .three-card-image-wrap {
+      min-height: {{ styles.image_min_height|default(80) }}px;
+    }
+  }
+</style>
+{% end_require_css %}
+
+<section id="{{ section_id }}" class="section-three-card" data-aos="fade" data-aos-duration="1000">
+  <div class="three-card-container">
+    {% if module.section_intro.intro_content %}
+      <div class="three-card-intro" style="text-align: {{ module.section_intro.intro_align|default('center') }}; margin-bottom: 40px;">
+        {{ module.section_intro.intro_content }}
+      </div>
+    {% endif %}
+
+    <div class="three-card-grid">
+      {% for card in valid_cards %}
+        {% set href = card.card_url.href %}
+        {% if href %}
+          {% set href = href|replace('?hsLang=en#', '#')|replace('?hsLang=en', '')|replace('&hsLang=en', '') %}
+          {% if "#" in href and (href|first != "#") %}
+            {% set hash_part = "#" ~ href|split('#')|last %}
+            {% set base_url = href|split('#')|first|split('?')|first %}
+            {% if base_url == request.path or base_url == content.absolute_url or ("//" ~ request.domain ~ request.path) in base_url %}
+              {% set href = hash_part %}
+            {% endif %}
+          {% endif %}
+        {% endif %}
+
+        {% set card_tag = 'a' if href else 'div' %}
+        {% set card_target = 'target="_blank" rel="noopener noreferrer"' if (href and card.open_in_new_tab) else '' %}
+
+        <{{ card_tag }} {% if href %}href="{{ href }}" {{ card_target }}{% endif %} class="three-card-item three-card-item--{{ loop.index }}" data-aos="fade-up" data-aos-delay="{{ loop.index * 100 }}">
+          {% if card.image.src %}
+            <div class="three-card-image-wrap">
+              <img src="{{ card.image.src }}" alt="{{ card.image.alt|default('Card Image') }}" loading="{{ card.image.loading|default('lazy') }}" {% if card.image.width %}width="{{ card.image.width }}"{% endif %} {% if card.image.height %}height="{{ card.image.height }}"{% endif %}>
+            </div>
+          {% endif %}
+          <div class="three-card-content">
+            {{ card.content }}
+          </div>
+        </{{ card_tag }}>
+      {% endfor %}
+    </div>
+  </div>
+</section>

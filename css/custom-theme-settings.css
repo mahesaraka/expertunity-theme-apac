@@ -147,7 +147,7 @@ ol li::before {
   line-height: 1.3;
 }
 
-ul li:not(nav ul li)::before {
+ul:not(.nav-ul):not(.nav-child-ul):not(.sidebar-navigation):not(.header-utility-menu):not(.mobile-utility-nav__list) li:not(nav ul li):not(header *):not(.mobile-menu-content *)::before {
   content: '';
   display: block;
   min-width: 20px;
@@ -163,9 +163,20 @@ ul li:not(nav ul li)::before {
 .sidebar-navigation li::before,
 .header-utility-menu li::before,
 .sidebar-item::before,
-.header-utility-menu__item::before {
-  content: none;
-  display: none;
+.header-utility-menu__item::before,
+header.header-wrapper li::before,
+header.header-wrapper ul li::before,
+.header-wrapper li::before,
+.mobile-menu-content li::before,
+.mobile-menu-content ul li::before,
+.mobile-menu-content .nav-child-li::before,
+.nav-child-li::before,
+.nav-child-ul li::before,
+.nav-ul li::before,
+.accordion-content li::before,
+.mobile-utility-nav li::before {
+  content: none !important;
+  display: none !important;
 }
 
 .dnd-section>.row-fluid,
