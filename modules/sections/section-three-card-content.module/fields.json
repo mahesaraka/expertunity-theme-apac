@@ -1,0 +1,518 @@
+[
+  {
+    "id": "77ba2b60-c641-4b0b-b800-854231ad2e17",
+    "name": "spacing",
+    "label": "Section Spacing & Overlap (Top / Bottom)",
+    "required": false,
+    "locked": false,
+    "type": "group",
+    "children": [
+      {
+        "id": "4629c665-7e7a-4e75-8fea-c102a0a5925b",
+        "name": "margin_top",
+        "label": "Margin Top (px)",
+        "help_text": "Top margin in px. Use negative values (e.g. -50) to overlap onto the Hero Section above.",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": -50
+      },
+      {
+        "id": "ee74c8f2-1a2e-4a2f-a871-1061bff30b29",
+        "name": "margin_bottom",
+        "label": "Margin Bottom (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 60
+      },
+      {
+        "id": "addd27ca-a168-4cf2-ac74-0037ee932667",
+        "name": "padding_top",
+        "label": "Padding Top (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 0
+      },
+      {
+        "id": "cedef1a3-85cd-4fc0-854d-04044f7e2c3d",
+        "name": "padding_bottom",
+        "label": "Padding Bottom (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 0
+      },
+      {
+        "id": "15372bb0-6ca9-41a4-a44c-bfe85c01659f",
+        "name": "margin_top_mobile",
+        "label": "Margin Top Mobile (px)",
+        "help_text": "Top margin on mobile screens (\u2264 767px).",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": -30
+      },
+      {
+        "id": "efc2f93b-27ad-46f9-8493-2ad4eedf4d6e",
+        "name": "margin_bottom_mobile",
+        "label": "Margin Bottom Mobile (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 40
+      },
+      {
+        "id": "cf7a1bab-f70f-4da2-8ba7-8234f58cbafb",
+        "name": "container_width",
+        "label": "Container Max Width (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 1200
+      }
+    ],
+    "default": {
+      "margin_top": -50,
+      "margin_bottom": 60,
+      "padding_top": 0,
+      "padding_bottom": 0,
+      "margin_top_mobile": -30,
+      "margin_bottom_mobile": 40,
+      "container_width": 1200
+    }
+  },
+  {
+    "id": "e16c97a5-2f08-4fa3-823e-0eab10aa5478",
+    "name": "section_intro",
+    "label": "Section Intro / Heading (Optional)",
+    "required": false,
+    "locked": false,
+    "type": "group",
+    "children": [
+      {
+        "id": "48d9c27a-14b5-48ec-b6e8-a8032b6d786e",
+        "name": "intro_content",
+        "label": "Intro Content",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "display_width": null,
+        "default": ""
+      },
+      {
+        "id": "7c834900-b804-40dd-90c2-39a4423f74af",
+        "name": "intro_align",
+        "label": "Intro Alignment",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          [
+            "left",
+            "Left"
+          ],
+          [
+            "center",
+            "Center"
+          ],
+          [
+            "right",
+            "Right"
+          ]
+        ],
+        "multiple": false,
+        "reordering_enabled": false,
+        "type": "choice",
+        "display_width": null,
+        "default": "center"
+      }
+    ],
+    "default": {
+      "intro_content": "",
+      "intro_align": "center"
+    }
+  },
+  {
+    "id": "589e8b2b-b4dd-46c0-8eff-bb858a2ed0b8",
+    "name": "card_styles",
+    "label": "Card Styles & Colors",
+    "required": false,
+    "locked": false,
+    "type": "group",
+    "children": [
+      {
+        "id": "80c099c0-3953-41da-985e-3be1f60fb973",
+        "name": "default_bg_color",
+        "label": "Default Card Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "bd56f7d8-2f55-4e1d-a33e-815d00d8d589",
+        "name": "hover_bg_color",
+        "label": "Hover Card Background Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#F1DEF9",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "ce68ba8d-d574-4cbc-a06a-540971d39cab",
+        "name": "border_color",
+        "label": "Card Border Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#E5E7EB",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "d2acbe72-a522-4d08-a10d-74a3b871ee35",
+        "name": "hover_border_color",
+        "label": "Hover Card Border Color",
+        "required": false,
+        "locked": false,
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#D1B2E0",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "a0c22e10-973b-49dc-a45f-fba9ac1f6880",
+        "name": "border_radius",
+        "label": "Card Border Radius (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 16
+      },
+      {
+        "id": "ead985e4-1692-4ba5-9ef7-936ac790db1b",
+        "name": "card_padding",
+        "label": "Card Inner Padding (px)",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 32
+      },
+      {
+        "id": "6d02841f-66c8-41b2-a189-724219a876af",
+        "name": "enable_shadow",
+        "label": "Enable Card Drop Shadow",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "display_width": null,
+        "default": true
+      },
+      {
+        "id": "c83e1655-1034-438f-a23f-c4644c8b931d",
+        "name": "image_height",
+        "label": "Image Height (px, 0 for auto)",
+        "help_text": "Set image height in px (e.g. 200). Set to 0 to keep natural aspect ratio.",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 0
+      },
+      {
+        "id": "f5a2e190-3b4c-4781-a9d1-81f3b0c5e712",
+        "name": "image_min_height",
+        "label": "Image Min Height (px)",
+        "help_text": "Minimum height for image area so all cards have equal height and images don't get squashed/flat on mobile.",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 80
+      },
+      {
+        "id": "e4c9b210-7f5d-48a3-b6d2-92e1c3f4a821",
+        "name": "card_min_height",
+        "label": "Card Min Height (px)",
+        "help_text": "Minimum height for the card box so it stays uniform and doesn't get flat on mobile.",
+        "required": false,
+        "locked": false,
+        "type": "number",
+        "display_width": null,
+        "default": 280
+      },
+      {
+        "id": "05298e8c-c8d4-43f8-9d03-d88893416b37",
+        "name": "image_fit",
+        "label": "Image Fit",
+        "required": false,
+        "locked": false,
+        "display": "select",
+        "choices": [
+          [
+            "contain",
+            "Contain (Fit whole image)"
+          ],
+          [
+            "cover",
+            "Cover (Fill entire image box)"
+          ]
+        ],
+        "multiple": false,
+        "reordering_enabled": false,
+        "type": "choice",
+        "display_width": null,
+        "default": "contain"
+      }
+    ],
+    "default": {
+      "default_bg_color": {
+        "color": "#FFFFFF",
+        "opacity": 100
+      },
+      "hover_bg_color": {
+        "color": "#F1DEF9",
+        "opacity": 100
+      },
+      "border_color": {
+        "color": "#E5E7EB",
+        "opacity": 100
+      },
+      "hover_border_color": {
+        "color": "#D1B2E0",
+        "opacity": 100
+      },
+      "border_radius": 16,
+      "card_padding": 32,
+      "enable_shadow": true,
+      "image_height": 0,
+      "image_min_height": 80,
+      "card_min_height": 280,
+      "image_fit": "contain"
+    }
+  },
+  {
+    "id": "51e07f7e-51fa-47c9-afde-862137bbc866",
+    "name": "cards",
+    "label": "Cards",
+    "required": false,
+    "locked": false,
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": null,
+      "sorting_label_field": null,
+      "default": 3
+    },
+    "children": [
+      {
+        "id": "54877a55-17ae-4b67-bc6e-6b1307bc4875",
+        "name": "image",
+        "label": "Card Image",
+        "required": false,
+        "locked": false,
+        "responsive": true,
+        "resizable": true,
+        "show_loading": true,
+        "type": "image",
+        "display_width": null,
+        "default": {
+          "size_type": "auto",
+          "src": "",
+          "alt": "Card image",
+          "loading": "lazy"
+        }
+      },
+      {
+        "id": "d813cb54-40d7-4ce7-a10a-650b9498e13e",
+        "name": "content",
+        "label": "Card Content",
+        "required": false,
+        "locked": false,
+        "type": "richtext",
+        "display_width": null,
+        "default": "<h3>Card Title</h3>\n<p>Describe key insights, features, or value propositions here.</p>"
+      },
+      {
+        "id": "8c04433c-c310-45f4-a8ad-2717ff839ddc",
+        "name": "card_url",
+        "label": "Card Link URL (Optional)",
+        "required": false,
+        "locked": false,
+        "supported_types": [
+          "EXTERNAL",
+          "CONTENT",
+          "FILE",
+          "EMAIL_ADDRESS",
+          "BLOG"
+        ],
+        "type": "url",
+        "display_width": null,
+        "default": {
+          "content_id": null,
+          "href": "",
+          "type": "EXTERNAL"
+        }
+      },
+      {
+        "id": "91cb47ff-bfa2-4b16-9bc6-32bdff90e732",
+        "name": "open_in_new_tab",
+        "label": "Open link in new tab",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "display_width": null,
+        "default": false
+      },
+      {
+        "id": "5d825f43-470f-4eb8-97fe-40fd9eddc643",
+        "name": "override_colors",
+        "label": "Custom Background Color for this Card?",
+        "required": false,
+        "locked": false,
+        "type": "boolean",
+        "display_width": null,
+        "default": false
+      },
+      {
+        "id": "53d07630-3410-4326-b2ea-bac5882cd22e",
+        "name": "custom_bg_color",
+        "label": "Custom Background Color",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": null,
+          "controlling_field_path": "cards.override_colors",
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "id": "180e1d11-38bd-4da9-b804-cd33096cfa35",
+        "name": "custom_hover_bg_color",
+        "label": "Custom Hover Background Color",
+        "required": false,
+        "locked": false,
+        "visibility": {
+          "controlling_field": null,
+          "controlling_field_path": "cards.override_colors",
+          "controlling_value_regex": "true",
+          "property": null,
+          "operator": "EQUAL",
+          "access": null
+        },
+        "type": "color",
+        "display_width": null,
+        "default": {
+          "color": "#F1DEF9",
+          "opacity": 100
+        }
+      }
+    ],
+    "default": [
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": "Card 1",
+          "loading": "lazy"
+        },
+        "content": "<h3>Seamless Collaboration</h3>\n<p>Connect and align across teams with powerful integrated tools and clear visibility.</p>",
+        "card_url": {
+          "content_id": null,
+          "href": "",
+          "type": "EXTERNAL"
+        },
+        "open_in_new_tab": false,
+        "override_colors": false,
+        "custom_bg_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        },
+        "custom_hover_bg_color": {
+          "color": "#F1DEF9",
+          "opacity": 100
+        }
+      },
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": "Card 2",
+          "loading": "lazy"
+        },
+        "content": "<h3>High Efficiency</h3>\n<p>Accelerate workflows with tailored insights, standardized processes, and trusted expertise.</p>",
+        "card_url": {
+          "content_id": null,
+          "href": "",
+          "type": "EXTERNAL"
+        },
+        "open_in_new_tab": false,
+        "override_colors": false,
+        "custom_bg_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        },
+        "custom_hover_bg_color": {
+          "color": "#F1DEF9",
+          "opacity": 100
+        }
+      },
+      {
+        "image": {
+          "size_type": "auto",
+          "src": "",
+          "alt": "Card 3",
+          "loading": "lazy"
+        },
+        "content": "<h3>Proven Results</h3>\n<p>Deliver measurable impact and value across projects with unmatched confidence.</p>",
+        "card_url": {
+          "content_id": null,
+          "href": "",
+          "type": "EXTERNAL"
+        },
+        "open_in_new_tab": false,
+        "override_colors": false,
+        "custom_bg_color": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        },
+        "custom_hover_bg_color": {
+          "color": "#F1DEF9",
+          "opacity": 100
+        }
+      }
+    ]
+  }
+]

@@ -50,7 +50,7 @@
       <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" class="scalable-banner__media-image">
     {% endif %}
   </div>
-  <div class="content-wrapper" data-aos="fade" data-aos-duration="1200">
+  <div class="content-wrapper {{ 'content-wrapper--has-image-content' if module.image_content.src }} {{ 'content-wrapper--centered' if module.center_content }}" data-aos="fade" data-aos-duration="1200">
     <div class="content {{ 'content--centered' if module.center_content }}">
       {{ module.content }}
       {% if module.add_ctas %}
@@ -78,6 +78,11 @@
         </div>
       {% endif %}
     </div>
+    {% if module.image_content.src %}
+      <div class="scalable-banner__image-content {{ 'scalable-banner__image-content--centered' if module.center_content }}">
+        <img src="{{ module.image_content.src }}" alt="{{ module.image_content.alt }}" class="scalable-banner__image-content-img" loading="{{ module.image_content.loading|default('lazy') }}" {% if module.image_content.width %}width="{{ module.image_content.width }}"{% endif %} {% if module.image_content.height %}height="{{ module.image_content.height }}"{% endif %}>
+      </div>
+    {% endif %}
     {% if module.placement_image.src %}
       <div class="scalable-banner__placement-image {{ 'scalable-banner__placement-image--centered' if module.center_content }}">
         <img src="{{ module.placement_image.src }}" alt="{{ module.placement_image.alt }}" class="scalable-banner__placement-image-img" loading="{{ module.placement_image.loading|default('lazy') }}" {% if module.placement_image.width %}width="{{ module.placement_image.width }}"{% endif %} {% if module.placement_image.height %}height="{{ module.placement_image.height }}"{% endif %}>
@@ -104,6 +109,74 @@
         margin: 0 auto;
       }
 
+      /* Desktop: Side-by-side if image_content exists and not centered */
+      .content-wrapper.content-wrapper--has-image-content:not(.content-wrapper--centered) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 48px;
+        max-width: {{ module.content_width }}px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+
+      .content-wrapper.content-wrapper--has-image-content:not(.content-wrapper--centered) > .content {
+        flex: 1 1 480px;
+        max-width: calc(55% - 24px);
+        width: 100%;
+        margin: 0;
+      }
+
+      .scalable-banner__image-content {
+        flex: 1 1 400px;
+        max-width: calc(45% - 24px);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+        transition: 0.3s ease-in-out;
+      }
+
+      .scalable-banner__image-content-img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+
+      /* Centered Layout: Image Content placed below content */
+      .content-wrapper.content-wrapper--centered {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        max-width: {{ module.content_width }}px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .scalable-banner__image-content--centered {
+        max-width: {{ module.content_width }}px;
+        width: 100%;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+      }
+
+      .content-wrapper.content-wrapper--has-image-content > .scalable-banner__placement-image {
+        flex: 1 1 100%;
+        width: 100%;
+      }
+
       .scalable-banner__placement-image {
         max-width: {{ module.content_width }}px;
         width: 100%;
@@ -124,6 +197,49 @@
         height: auto;
         display: block;
         object-fit: contain;
+      }
+
+      /* Tablet (768px - 1024px): Still side-by-side */
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .content-wrapper.content-wrapper--has-image-content:not(.content-wrapper--centered) {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 24px;
+        }
+
+        .content-wrapper.content-wrapper--has-image-content:not(.content-wrapper--centered) > .content {
+          flex: 1 1 50%;
+          max-width: 52%;
+        }
+
+        .content-wrapper.content-wrapper--has-image-content:not(.content-wrapper--centered) > .scalable-banner__image-content {
+          flex: 1 1 44%;
+          max-width: 44%;
+        }
+      }
+
+      /* Mobile (<= 767px): Image placed below content and buttons */
+      @media screen and (max-width: 767px) {
+        .content-wrapper.content-wrapper--has-image-content:not(.content-wrapper--centered) {
+          display: flex !important;
+          flex-direction: column !important;
+        }
+
+        .content-wrapper.content-wrapper--has-image-content > .content {
+          max-width: 100% !important;
+          width: 100% !important;
+          flex: 1 1 100% !important;
+        }
+
+        .content-wrapper.content-wrapper--has-image-content > .scalable-banner__image-content {
+          max-width: 100% !important;
+          width: 100% !important;
+          flex: 1 1 100% !important;
+          margin-top: 32px;
+          justify-content: center;
+        }
       }
     {% end_scope_css %}
   </style>

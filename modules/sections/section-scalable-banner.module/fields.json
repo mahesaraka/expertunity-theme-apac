@@ -137,6 +137,24 @@
     "default": "1440"
   },
   {
+    "id": "image_content",
+    "name": "image_content",
+    "label": "Image Content",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "show_loading": true,
+    "type": "image",
+    "display_width": null,
+    "default": {
+      "size_type": "auto",
+      "src": "",
+      "alt": "",
+      "loading": "lazy"
+    }
+  },
+  {
     "id": "center_content",
     "name": "center_content",
     "label": "Center content",
